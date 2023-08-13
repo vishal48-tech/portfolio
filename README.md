@@ -1,4 +1,1 @@
-# mv-portfolio
-
-This is my first website.
-Tell me if I can improve it.
+Visit this website to know about me, my skills and from where did i learned this skills.
