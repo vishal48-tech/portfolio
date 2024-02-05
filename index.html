@@ -1,227 +1,443 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Visit this portfolio to know about me, my works and contact me for any work." />
-  <link rel="icon" type="image/x-icon" href="images/online-resume.png">
-  <title>My Portfolio | Homepage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./Images/portfolio-logo.webp">
+  <title>Portfolio [Mondal Vishal]</title>
+  <style>
+    .gradient-text {
+      animation: gradient 5s ease infinite;
+      background-size: 200% 100%;
+    }
 
-  <!-- style -->
-  <link rel="stylesheet" href="style.css">
+    @keyframes gradient {
+      0% {
+        background-position: 200% 50%;
+      }
 
-  <!-- fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"
-    rel="stylesheet">
-
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
 </head>
 
-<body>
-  <!-- javascript -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="index.js"></script>
+<body class="bg-slate-100 dark:bg-slate-900 transition ease duration-500">
 
-  <!-- navbar -->
-  <nav class="navbar">
-    <!-- navbar logo -->
-    <div class="navbar-logo">
-      <h1>Portfolio</h1>
+  <!-- Navbar -->
+  <nav
+    class="bg-slate-300 dark:bg-slate-950 dark:text-gray-300 flex justify-between px-5 lg:px-20 py-2 text-lg font-semibold sticky top-0 w-full transition ease duration-500">
+
+    <!-- Menu-btn -->
+    <div class="flex items-center lg:hidden">
+      <h1 class="sr-only">Menu button</h1>
+      <button class="hover:ring-2 hover:ring-blue-900 rounded-md p-1" onclick="openMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+        </svg>
+      </button>
     </div>
-    <!-- navbar hamburger -->
-    <div class="navbar-toggle" id="navbar-toggle">
-      <div class="toggle-line" id="tg-line-1"></div>
-      <div class="toggle-line" id="tg-line-2"></div>
-      <div class="toggle-line" id="tg-line-3"></div>
+
+    <!-- Logo -->
+    <div class="flex items-center shrink-0">
+
+      <!-- Mobile theme change button -->
+      <h1 class="sr-only">Mobile theme change button</h1>
+      <button class="lg:hidden" onclick="theme()">
+        <!-- Mobile moon -->
+        <svg id="mobile-moon" class="h-5 w-auto -rotate-45 text-slate-600" version="1.1" id="Capa_1"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56 56"
+          xml:space="preserve" fill="currentColor">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M29,28c0-11.917,7.486-22.112,18-26.147C43.892,0.66,40.523,0,37,0C21.561,0,9,12.561,9,28 s12.561,28,28,28c3.523,0,6.892-0.66,10-1.853C36.486,50.112,29,39.917,29,28z">
+            </path>
+          </g>
+        </svg>
+
+        <!-- Mobile sun -->
+        <svg id="mobile-sun" class="h-8 w-auto hidden text-slate-600" enable-background="new 0 0 512 512" id="Layer_1"
+          version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g>
+            <g>
+              <path
+                d="M256,144c-61.75,0-112,50.25-112,112c0,61.749,50.25,112,112,112s112-50.251,112-112    C368,194.25,317.75,144,256,144z M256,112c8.833,0,16-7.146,16-16V64c0-8.833-7.167-16-16-16c-8.854,0-16,7.167-16,16v32    C240,104.854,247.146,112,256,112z M256,400c-8.854,0-16,7.167-16,16v32c0,8.854,7.146,16,16,16c8.833,0,16-7.146,16-16v-32    C272,407.167,264.833,400,256,400z M380.417,154.167l22.625-22.625c6.25-6.25,6.25-16.375,0-22.625    c-6.251-6.25-16.375-6.25-22.625,0l-22.625,22.625c-6.251,6.25-6.251,16.375,0,22.625    C364.042,160.416,374.166,160.416,380.417,154.167z M131.541,357.854l-22.623,22.625c-6.252,6.25-6.252,16.377,0,22.625    c6.249,6.25,16.373,6.25,22.623,0l22.625-22.625c6.251-6.291,6.251-16.375,0-22.625    C147.917,351.604,137.792,351.562,131.541,357.854z M112,256c0-8.833-7.167-16-16-16H64c-8.854,0-16,7.167-16,16    c0,8.854,7.146,16,16,16h32C104.833,272,112,264.854,112,256z M448,240h-32c-8.854,0-16,7.167-16,16c0,8.854,7.146,16,16,16h32    c8.833,0,16-7.146,16-16C464,247.167,456.833,240,448,240z M131.521,154.167c6.249,6.25,16.375,6.25,22.625,0    c6.249-6.25,6.249-16.375,0-22.625l-22.625-22.625c-6.25-6.25-16.376-6.25-22.625,0c-6.25,6.25-6.25,16.375,0,22.625    L131.521,154.167z M380.459,357.812c-6.293-6.25-16.376-6.25-22.625,0c-6.25,6.248-6.293,16.375,0,22.625l22.625,22.625    c6.249,6.248,16.374,6.248,22.625,0c6.249-6.25,6.249-16.377,0-22.625L380.459,357.812z"
+                fill="currentColor" />
+            </g>
+          </g>
+        </svg>
+      </button>
+
+      <img src="./Images/portfolio-logo.webp" alt="portfolio-logo" class="h-8 w-auto my-1 ml-5 lg:ml-0">
     </div>
-    <!-- navbar links -->
-    <ul class="navbar-links" id="navbar-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#role">Role</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+
+    <!-- Desktop links -->
+    <div class="hidden lg:flex gap-x-3 items-center">
+      <button onclick="scrollHome()"
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Home</button>
+      <button onclick="scrollAbout()"
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">About</button>
+      <button onclick="scrollProject()"
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Projects</button>
+      <button onclick="scrollSkill()"
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Skills</button>
+      <button onclick="scrollService()"
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Services</button>
+      <button onclick="scrollContact()"
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Contact</button>
+
+      <!-- Theme change button -->
+      <h1 class="sr-only">Theme change button</h1>
+      <button onclick="theme()">
+        <!-- Moon -->
+        <svg id="moon" class="h-5 w-auto -rotate-45 text-slate-600" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56 56" xml:space="preserve" fill="currentColor">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M29,28c0-11.917,7.486-22.112,18-26.147C43.892,0.66,40.523,0,37,0C21.561,0,9,12.561,9,28 s12.561,28,28,28c3.523,0,6.892-0.66,10-1.853C36.486,50.112,29,39.917,29,28z">
+            </path>
+          </g>
+        </svg>
+
+        <!-- Sun -->
+        <svg id="sun" class="h-8 w-auto hidden text-slate-600" enable-background="new 0 0 512 512" version="1.1"
+          viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g>
+            <g>
+              <path
+                d="M256,144c-61.75,0-112,50.25-112,112c0,61.749,50.25,112,112,112s112-50.251,112-112    C368,194.25,317.75,144,256,144z M256,112c8.833,0,16-7.146,16-16V64c0-8.833-7.167-16-16-16c-8.854,0-16,7.167-16,16v32    C240,104.854,247.146,112,256,112z M256,400c-8.854,0-16,7.167-16,16v32c0,8.854,7.146,16,16,16c8.833,0,16-7.146,16-16v-32    C272,407.167,264.833,400,256,400z M380.417,154.167l22.625-22.625c6.25-6.25,6.25-16.375,0-22.625    c-6.251-6.25-16.375-6.25-22.625,0l-22.625,22.625c-6.251,6.25-6.251,16.375,0,22.625    C364.042,160.416,374.166,160.416,380.417,154.167z M131.541,357.854l-22.623,22.625c-6.252,6.25-6.252,16.377,0,22.625    c6.249,6.25,16.373,6.25,22.623,0l22.625-22.625c6.251-6.291,6.251-16.375,0-22.625    C147.917,351.604,137.792,351.562,131.541,357.854z M112,256c0-8.833-7.167-16-16-16H64c-8.854,0-16,7.167-16,16    c0,8.854,7.146,16,16,16h32C104.833,272,112,264.854,112,256z M448,240h-32c-8.854,0-16,7.167-16,16c0,8.854,7.146,16,16,16h32    c8.833,0,16-7.146,16-16C464,247.167,456.833,240,448,240z M131.521,154.167c6.249,6.25,16.375,6.25,22.625,0    c6.249-6.25,6.249-16.375,0-22.625l-22.625-22.625c-6.25-6.25-16.376-6.25-22.625,0c-6.25,6.25-6.25,16.375,0,22.625    L131.521,154.167z M380.459,357.812c-6.293-6.25-16.376-6.25-22.625,0c-6.25,6.248-6.293,16.375,0,22.625l22.625,22.625    c6.249,6.248,16.374,6.248,22.625,0c6.249-6.25,6.249-16.377,0-22.625L380.459,357.812z"
+                fill="currentColor" />
+            </g>
+          </g>
+        </svg>
+      </button>
+    </div>
   </nav>
 
-  <!-- navbar links mobile -->
-  <div class="navbar-links-m" id="navbar-links-m">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#role">Role</a>
-    <a href="#contact">Contact</a>
+  <!-- Mobile links -->
+  <div id="menu"
+    class="lg:hidden flex flex-col w-full items-center bg-slate-300 dark:bg-slate-950 dark:text-gray-300 px-2 text-lg font-semibold gap-y-2 py-2 -translate-x-full transition ease duration-700 fixed top-15">
+    <button onclick="scrollHome(); openMenu();"
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Home</button>
+    <button onclick="scrollAbout(); openMenu();"
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">About</button>
+    <button onclick="scrollProject(); openMenu();"
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Projects</button>
+    <button onclick="scrollSkill(); openMenu();"
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Skills</button>
+    <button onclick="scrollService(); openMenu();"
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Services</button>
+    <button onclick="scrollContact(); openMenu();"
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Contact</button>
   </div>
 
-  <!-- about -->
-  <div class="container" id="about">
-    <div class="section-name">
-      <h1>ABOUT</h1>
+  <!-- Home -->
+  <div id="home" class="flex flex-col-reverse lg:flex-row lg:px-40 items-center justify-between py-10">
+    <div
+      class="text-4xl md:text-5xl flex flex-col gap-y-10 justify-center font-bold py-10 lg:py-0 items-center lg:items-start">
+      <h1 class="dark:text-white text-black transition ease duration-500 text-center">Mondal Vishal</h1>
+      <h1
+        class="text-transparent bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text gradient-text pb-2 text-center">
+        Fullstack developer</h1>
     </div>
-    <div class="content">
-      <p>Hello! I'm <span>Mondal Vishal</span>, a passionate <span>Web Developer</span> with <span>3 months</span> of
-        experience. I have a strong background in <span>Full-Stack Development</span>. My goal is to <span>Be a great
-          freelancer with clients who can help me grow my career</span>. I strive to deliver <span>Positive
-          Impact</span> through my work.</p>
+    <div>
+      <img src="./Images/profile-pic-res.webp" alt="profile-picture" class="h-60 w-auto">
     </div>
   </div>
 
-  <!-- skills -->
-  <div class="container" id="skills">
-    <div class="section-name">
-      <h1>SKILLS</h1>
+  <!-- About -->
+  <div id="about"
+    class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 pb-10 transition ease duration-500">
+    <div class="text-4xl md:text-5xl font-bold">
+      <h1 class="text-indigo-600">About</h1>
     </div>
-    <div class="section">
+    <div class="text-3xl text-center flex flex-col gap-y-5">
+      <p>Hello! I'm Mondal Vishal, a Fullstack developer. I can create web-apps according to your need using the
+        programming languages mentioned below in skills section.</p>
+      <div class="flex justify-center items-center font-semibold">
+        <button onclick="scrollSkill()"
+          class="dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 flex items-center gap-x-2 transition ease duration-500">Skills
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6 mt-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
-      <!-- html details -->
-      <div class="content">
-        <div class="content-head">
+  <!-- Projects -->
+  <div id="projects"
+    class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 transition ease duration-500">
+    <div class="text-4xl md:text-5xl font-bold">
+      <h1 class="text-indigo-600">Projects</h1>
+    </div>
+
+    <!-- Cards -->
+    <div class="flex flex-row flex-wrap justify-evenly w-full gap-x-5 gap-y-10">
+      <!-- Card 1 -->
+      <div class="md:px-3">
+        <img src="./Images/logo.svg" alt="Brandly" class="aspect-square h-60 my-5 object-cover object-center">
+        <div class="px-5">
+          <h1 class="text-3xl font-semibold mb-2">Brandly</h1>
+          <a href="" target="_blank"
+            class="flex items-center text-2xl dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 gap-x-2 transition ease duration-500">Visit
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6 mt-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg></a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="md:px-3">
+        <img src="./Images/todo-list.svg" alt="Todo web" class="aspect-square h-60 my-5 object-cover object-center">
+        <div class="px-5">
+          <h1 class="text-3xl font-semibold mb-2">Todo Web</h1>
+          <a href="https://vishal48-tech.github.io/todo-web/" target="_blank"
+            class="flex items-center text-2xl dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 gap-x-2 transition ease duration-500">Visit
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6 mt-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg></a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="md:px-3">
+        <img src="./Images/git-repository.svg" alt="Fetch github repos"
+          class="aspect-square h-60 my-5 object-contain object-center">
+        <div class="px-5">
+          <h1 class="text-3xl font-semibold mb-2">Fetch github repos</h1>
+          <a href="https://vishal48-tech.github.io/most-starred-repos/" target="_blank"
+            class="flex items-center text-2xl dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 gap-x-2 transition ease duration-500">Visit
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6 mt-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- More projects -->
+    <div class="mt-10">
+      <a href="https://github.com/vishal48-tech" target="_blank"
+        class="text-2xl px-10 py-2 bg-blue-600 hover:bg-opacity-75 rounded-md text-white transition ease duration-500">More
+        projects</a>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div id="skills"
+    class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 transition ease duration-500">
+    <div class="text-4xl md:text-5xl font-bold">
+      <h1 class="text-indigo-600">Skills</h1>
+    </div>
+
+    <!-- Cards -->
+    <div class="flex flex-row flex-wrap justify-evenly w-full gap-x-5 gap-y-10">
+      <!-- Card 1 -->
+      <div class="md:px-5">
+        <img src="./Images/html-5.svg" alt="Html" class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>HTML</h1>
-          <img src="images/html.webp" alt="">
-        </div>
-        <div class="content-body">
-          <p>The HyperText Markup Language or HTML is the standard markup language for documents designed to be
-            displayed in a web browser. It defines the meaning and structure of web content.</p>
-          <p>It is the easiest of all languages, so there's no doubt I can code it very well.</p>
         </div>
       </div>
 
-      <!-- css details -->
-      <div class="content">
-        <div class="content-head">
+      <!-- Card 2 -->
+      <div class="md:px-5">
+        <img src="./Images/css.svg" alt="Css" class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>CSS</h1>
-          <img src="images/css.webp" alt="">
-        </div>
-        <div class="content-body">
-          <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document
-            written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).</p>
-          <p>I know to code css very well but it will take time for me to build logic more faster.</p>
         </div>
       </div>
 
-      <!-- javascript details -->
-      <div class="content">
-        <div class="content-head">
-          <h1>JAVASCRIPT</h1>
-          <img src="images/js.webp" alt="">
-        </div>
-        <div class="content-body">
-          <p>JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the
-            World Wide Web, alongside HTML and CSS. As of 2023, 98.7% of websites use JavaScript on the client side for
-            webpage behavior, often incorporating third-party libraries.</p>
-          <p>This language is hard for me but i will keep using different features in different projects, i will try to
-            master it as soon as possible.</p>
+      <!-- Card 3 -->
+      <div class="md:px-5">
+        <img src="./Images/js.svg" alt="Js" class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <div class="flex justify-center items-center text-3xl font-semibold">
+          <h1>JS</h1>
         </div>
       </div>
 
-      <!-- php details -->
-      <div class="content">
-        <div class="content-head">
+      <!-- Card 4 -->
+      <div class="md:px-5">
+        <img src="./Images/php.svg" alt="Php" class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>PHP</h1>
-          <img src="images/php.png" alt="">
-        </div>
-        <div class="content-body">
-          <p>PHP is a general-purpose scripting language geared towards web development. PHP was originally an
-            abbreviation of Personal Home Page, but it now stands for the recursive initialism PHP: Hypertext
-            Preprocessor. PHP code is usually processed on a web server by a PHP interpreter implemented as a module, a
-            daemon or a Common Gateway Interface (CGI) executable.</p>
-          <p>Php is a backend language which is very easy to learn for beginner and i am good at it. I can store and get
-            data into database using it.</p>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- education -->
-  <div class="container" id="education">
-    <div class="section-name">
-      <h1>EDUCATION</h1>
-    </div>
-    <div class="section">
-
-      <!-- javascript content -->
-      <div class="content">
-        <p><span>Youtube: </span>CodeWithHarry</p>
-        <ul>
-          <li><a href="https://youtube.com/playlist?list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR">javascript full course</a>
-          </li>
-        </ul>
+      <!-- Card 5 -->
+      <div class="md:px-5">
+        <img src="./Images/mysql.svg" alt="Mysql" class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <div class="flex justify-center items-center text-3xl font-semibold">
+          <h1>MySQL</h1>
+        </div>
       </div>
 
-      <!-- css content -->
-      <div class="content">
-        <p><span>Youtube: </span>TechGun</p>
-        <ul>
-          <li><a href="https://youtube.com/playlist?list=PLjpp5kBQLNTSFXXi-bfskBXG178FGkftU">css full course</a>
-          </li>
-        </ul>
+      <!-- Card 6 -->
+      <div class="md:px-5">
+        <img src="./Images/bootstrap.svg" alt="bootstrap"
+          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <div class="flex justify-center items-center text-3xl font-semibold">
+          <h1>Bootstrap</h1>
+        </div>
       </div>
 
-      <!-- php content -->
-      <div class="content">
-        <p><span>Youtube: </span>ThapaTechnical</p>
-        <ul>
-          <li><a href="https://youtube.com/playlist?list=PLwGdqUZWnOp2oT1YL7A126sr08lA2F5hz">php full course</a>
-          </li>
-        </ul>
+      <!-- Card 7 -->
+      <div class="md:px-5">
+        <img src="./Images/tailwind-css.svg" alt="tailwind"
+          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <div class="flex justify-center items-center text-3xl font-semibold">
+          <h1>Tailwind CSS</h1>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="md:px-5">
+        <img src="./Images/jquery.svg" alt="jquery"
+          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <div class="flex justify-center items-center text-3xl font-semibold">
+          <h1>JQuery</h1>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="md:px-5">
+        <img src="./Images/react.svg" alt="react js"
+          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <div class="flex justify-center items-center text-3xl font-semibold">
+          <h1>React JS</h1>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- role -->
-  <div class="container" id="role">
-    <div class="section-name">
-      <h1>role</h1>
+  <!-- Services -->
+  <div id="services" class="flex flex-col dark:text-white items-center py-10 px-3 md:px-5 lg:px-20">
+    <div class="text-4xl md:text-5xl font-bold">
+      <h1 class="text-indigo-600">Services</h1>
     </div>
-    <div class="content">
-      <p><Span>Freelancer: </Span></p>
 
-      <p><span>Client Acquisition: </span>Actively seeking out and connecting with potential clients who
-        require your services. This could involve networking, online platforms, or reaching out directly to businesses
-        or individuals.</p>
+    <!-- Cards -->
+    <div class="grid lg:grid-cols-2 gap-x-10 gap-y-5 mt-5">
+      <!-- Card 1 -->
+      <div
+        class="py-10 px-3 md:px-5 lg:px-10 bg-slate-200 dark:bg-slate-800 rounded-lg text-center transition ease duration-500">
+        <h1 class="text-3xl font-semibold text-emerald-500 dark:text-emerald-300 transition ease duration-500">Website
+          development</h1>
+        <p class="text-2xl mt-3">Want to promote your business using a website? I can help you create a website that
+          will make it stand out from the competition. Contact for more details and pricing.</p>
+      </div>
 
-      <p><span>Project Management: </span>Taking charge of managing your projects from start to finish. This includes
-        understanding
-        client requirements, establishing project timelines, setting goals, and ensuring timely delivery of high-quality
-        work.</p>
-
-      <p><span>Communication: </span>Maintaining effective and clear communication with clients throughout the project
-        lifecycle. This
-        involves discussing project details, gathering feedback, and addressing any concerns or questions that may
-        arise.</p>
-
-      <p><span>Skill Development: </span>Continuously improving your skills and knowledge in your area of expertise to
-        stay updated
-        with industry trends and provide the best possible solutions to your clients. This may involve self-learning,
-        online courses, attending webinars, or collaborating with other professionals.</p>
-
-      <p><span>Delivering High-Quality Work: </span>Demonstrating a commitment to delivering work that meets or exceeds
-        client
-        expectations. This includes attention to detail, meeting project requirements, and ensuring the final output is
-        of excellent quality.</p>
-
-      <p><span>Time and Resource Management: </span>Effectively managing your time and resources to meet project
-        deadlines. This
-        involves prioritizing tasks, staying organized, and efficiently utilizing available tools and technology.</p>
+      <!-- Card 2 -->
+      <div
+        class="py-10 px-3 md:px-5 lg:px-10 bg-slate-200 dark:bg-slate-800 rounded-lg text-center transition ease duration-500">
+        <h1 class="text-3xl font-semibold text-emerald-500 dark:text-emerald-300 transition ease duration-500">Web-app
+          development</h1>
+        <p class="text-2xl mt-3">Want to create a fully functional website for your business? I can help you create a
+          web-app that will fulfill all your requirements. Contact for more details and pricing</p>
+      </div>
     </div>
   </div>
 
-  <!-- contact -->
-  <div class="container" id="contact">
-    <div class="section-name">
-      <h1>Contact</h1>
+  <!-- Contact -->
+  <div id="contact" class="flex flex-col dark:text-white items-center py-10 px-3 md:px-5 lg:px-20">
+    <div class="text-4xl md:text-5xl font-bold">
+      <h1 class="text-indigo-600">Contact</h1>
     </div>
-    <div class="content">
-      <p>
-        <span>Email: </span>
-        <a href="mailto:vishalmondal567@gmail.com">vishalmondal567@gmail.com</a>
-      </p>
+    <div class="grid lg:grid-cols-2 w-full place-items-center text-3xl pt-10 gap-5">
+      <div class="flex items-center gap-x-3">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mt-2">
+          <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+          <path
+            d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+        </svg>
+        <h1 class="text-2xl break-all sm:text-3xl">vishalmondal567@gmail.com</h1>
+      </div>
+      <div class="flex items-center gap-x-3">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" class="w-6 h-6 mt-1">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+        </svg>
+        <h1 class="text-2xl break-all sm:text-3xl">+91 6353372889</h1>
+      </div>
     </div>
-  </div>
 
+    <script>
+      /* Open mobile menu function */
+      const openMenu = () => {
+        document.getElementById("menu").classList.toggle("-translate-x-full");
+        if (!document.getElementById("menu").classList.contains("duration-700")) {
+          document.getElementById("menu").classList.remove("duration-500");
+          document.getElementById("menu").classList.add("duration-700");
+        }
+      }
+
+      /* Theme change function */
+      const theme = () => {
+        document.documentElement.classList.toggle("dark");
+        document.getElementById("moon").classList.toggle("hidden");
+        document.getElementById("sun").classList.toggle("hidden");
+        document.getElementById("mobile-moon").classList.toggle("hidden");
+        document.getElementById("mobile-sun").classList.toggle("hidden");
+        if (document.getElementById("menu").classList.contains("duration-700")) {
+          document.getElementById("menu").classList.add("duration-500");
+          document.getElementById("menu").classList.remove("duration-700");
+        }
+      }
+
+      /* Scroll functions */
+      const scrollHome = () => {
+        window.scroll({
+          top: document.querySelector("#home").offsetTop - 50,
+          behavior: "smooth",
+        })
+      }
+      const scrollAbout = () => {
+        window.scroll({
+          top: document.querySelector("#about").offsetTop - 50,
+          behavior: "smooth",
+        })
+      }
+      const scrollProject = () => {
+        window.scroll({
+          top: document.querySelector("#projects").offsetTop - 50,
+          behavior: "smooth",
+        })
+      }
+      const scrollSkill = () => {
+        window.scroll({
+          top: document.querySelector("#skills").offsetTop - 50,
+          behavior: "smooth",
+        })
+      }
+      const scrollService = () => {
+        window.scroll({
+          top: document.querySelector("#services").offsetTop - 50,
+          behavior: "smooth",
+        })
+      }
+      const scrollContact = () => {
+        window.scroll({
+          top: document.querySelector("#contact").offsetTop - 50,
+          behavior: "smooth",
+        })
+      }
+    </script>
 </body>
 
 </html>
