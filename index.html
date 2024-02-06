@@ -3,10 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- Set cache policy for static assets -->
-<meta http-equiv="Cache-Control" content="public, max-age=31536000">
+  <meta http-equiv="Cache-Control" content="public, max-age=86400">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Visit this site to know about me, my skills, projects and services, you can also contact me to help you build your web-app.">
+  <meta name="description" content="">
   <link href="./output.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="./Images/portfolio-logo.webp">
   <title>Portfolio [Mondal Vishal]</title>
@@ -37,7 +36,7 @@
     <!-- Menu-btn -->
     <div class="flex items-center lg:hidden">
       <h1 class="sr-only">Menu button</h1>
-      <button name="menu-btn" class="hover:ring-2 hover:ring-blue-900 rounded-md p-1" onclick="openMenu()">
+      <button class="hover:ring-2 hover:ring-blue-900 rounded-md p-1" onclick="openMenu()">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
           class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
@@ -50,9 +49,9 @@
 
       <!-- Mobile theme change button -->
       <h1 class="sr-only">Mobile theme change button</h1>
-      <button name="m-theme-change" class="lg:hidden" onclick="theme()">
+      <button class="lg:hidden" onclick="theme()">
         <!-- Mobile moon -->
-        <svg id="mobile-moon" class="h-5 w-auto -rotate-45 text-slate-600" version="1.1" id="Capa_1"
+        <svg id="mobile-moon" class="h-5 w-auto -rotate-45 dark:text-slate-500" version="1.1" id="Capa_1"
           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56 56"
           xml:space="preserve" fill="currentColor">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -65,8 +64,8 @@
         </svg>
 
         <!-- Mobile sun -->
-        <svg id="mobile-sun" class="h-8 w-auto hidden text-slate-600" enable-background="new 0 0 512 512" id="Layer_1"
-          version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        <svg id="mobile-sun" class="h-8 w-auto hidden text-slate-600 -mr-1" enable-background="new 0 0 512 512"
+          id="Layer_1" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <g>
             <g>
@@ -78,30 +77,31 @@
         </svg>
       </button>
 
-      <img src="./Images/portfolio-logo.webp" alt="portfolio-logo" class="h-8 w-8 my-1 ml-5 lg:ml-0">
+      <img src="./Images/portfolio-logo.webp" alt="portfolio-logo" loading="eager" class="h-8 w-auto my-1 ml-5 lg:ml-0">
     </div>
 
     <!-- Desktop links -->
     <div class="hidden lg:flex gap-x-3 items-center">
       <button onclick="scrollHome()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Home</button>
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Home</button>
       <button onclick="scrollAbout()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">About</button>
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">About</button>
       <button onclick="scrollProject()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Projects</button>
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Projects</button>
       <button onclick="scrollSkill()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Skills</button>
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Skills</button>
       <button onclick="scrollService()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Services</button>
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Services</button>
       <button onclick="scrollContact()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Contact</button>
+        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Contact</button>
 
       <!-- Theme change button -->
       <h1 class="sr-only">Theme change button</h1>
-      <button name="theme-change" onclick="theme()">
+      <button onclick="theme()">
         <!-- Moon -->
-        <svg id="moon" class="h-5 w-auto -rotate-45 text-slate-600" version="1.1" xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56 56" xml:space="preserve" fill="currentColor">
+        <svg id="moon" class="h-5 w-auto -rotate-45 dark:text-slate-500" version="1.1"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56 56"
+          xml:space="preserve" fill="currentColor">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="SVGRepo_iconCarrier">
@@ -112,8 +112,8 @@
         </svg>
 
         <!-- Sun -->
-        <svg id="sun" class="h-8 w-auto hidden text-slate-600" enable-background="new 0 0 512 512" version="1.1"
-          viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        <svg id="sun" class="h-8 w-auto hidden text-slate-600 -mr-1 -ml-2" enable-background="new 0 0 512 512"
+          version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <g>
             <g>
@@ -131,17 +131,17 @@
   <div id="menu"
     class="lg:hidden flex flex-col w-full items-center bg-slate-300 dark:bg-slate-950 dark:text-gray-300 px-2 text-lg font-semibold gap-y-2 py-2 -translate-x-full transition ease duration-700 fixed top-15">
     <button onclick="scrollHome(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Home</button>
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Home</button>
     <button onclick="scrollAbout(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">About</button>
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">About</button>
     <button onclick="scrollProject(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Projects</button>
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Projects</button>
     <button onclick="scrollSkill(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Skills</button>
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Skills</button>
     <button onclick="scrollService(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Services</button>
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Services</button>
     <button onclick="scrollContact(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Contact</button>
+      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Contact</button>
   </div>
 
   <!-- Home -->
@@ -154,7 +154,7 @@
         Fullstack developer</h1>
     </div>
     <div>
-      <img src="./Images/profile-pic-res.webp" alt="profile-picture" class="h-60 w-60">
+      <img src="./Images/profile-pic-res.webp" alt="profile-picture" loading="eager" class="h-60 w-auto">
     </div>
   </div>
 
@@ -162,7 +162,7 @@
   <div id="about"
     class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 pb-10 transition ease duration-500">
     <div class="text-4xl md:text-5xl font-bold">
-      <h1 class="text-indigo-600">About</h1>
+      <h1 class="text-indigo-600 dark:text-indigo-500">About</h1>
     </div>
     <div class="text-3xl text-center flex flex-col gap-y-5">
       <p>Hello! I'm Mondal Vishal, a Fullstack developer. I can create web-apps according to your need using the
@@ -183,17 +183,18 @@
   <div id="projects"
     class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 transition ease duration-500">
     <div class="text-4xl md:text-5xl font-bold">
-      <h1 class="text-indigo-600">Projects</h1>
+      <h1 class="text-indigo-600 dark:text-indigo-500">Projects</h1>
     </div>
 
     <!-- Cards -->
     <div class="flex flex-row flex-wrap justify-evenly w-full gap-x-5 gap-y-10">
       <!-- Card 1 -->
       <div class="md:px-3">
-        <img src="./Images/logo.svg" alt="Brandly" class="aspect-square h-60 my-5 object-cover object-center">
+        <img src="./Images/logo.svg" alt="Brandly" loading="lazy"
+          class="aspect-square h-60 my-5 object-cover object-center">
         <div class="px-5">
           <h1 class="text-3xl font-semibold mb-2">Brandly</h1>
-          <a href="https://github.com/vishal48-tech/brandly" target="_blank"
+          <a href="" target="_blank"
             class="flex items-center text-2xl dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 gap-x-2 transition ease duration-500">Visit
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-6 h-6 mt-2">
@@ -204,7 +205,8 @@
 
       <!-- Card 2 -->
       <div class="md:px-3">
-        <img src="./Images/todo-list.svg" alt="Todo web" class="aspect-square h-60 my-5 object-cover object-center">
+        <img src="./Images/todo-list.svg" alt="Todo web" loading="lazy"
+          class="aspect-square h-60 my-5 object-cover object-center">
         <div class="px-5">
           <h1 class="text-3xl font-semibold mb-2">Todo Web</h1>
           <a href="https://vishal48-tech.github.io/todo-web/" target="_blank"
@@ -218,7 +220,7 @@
 
       <!-- Card 3 -->
       <div class="md:px-3">
-        <img src="./Images/git-repository.svg" alt="Fetch github repos"
+        <img src="./Images/git-repository.svg" alt="Fetch github repos" loading="lazy"
           class="aspect-square h-60 my-5 object-contain object-center">
         <div class="px-5">
           <h1 class="text-3xl font-semibold mb-2">Fetch github repos</h1>
@@ -244,14 +246,15 @@
   <div id="skills"
     class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 transition ease duration-500">
     <div class="text-4xl md:text-5xl font-bold">
-      <h1 class="text-indigo-600">Skills</h1>
+      <h1 class="text-indigo-600 dark:text-indigo-500">Skills</h1>
     </div>
 
     <!-- Cards -->
     <div class="flex flex-row flex-wrap justify-evenly w-full gap-x-5 gap-y-10">
       <!-- Card 1 -->
       <div class="md:px-5">
-        <img src="./Images/html-5.svg" alt="Html" class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <img src="./Images/html-5.svg" alt="Html" loading="lazy"
+          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>HTML</h1>
         </div>
@@ -259,7 +262,8 @@
 
       <!-- Card 2 -->
       <div class="md:px-5">
-        <img src="./Images/css.svg" alt="Css" class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <img src="./Images/css.svg" alt="Css" loading="lazy"
+          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>CSS</h1>
         </div>
@@ -267,7 +271,8 @@
 
       <!-- Card 3 -->
       <div class="md:px-5">
-        <img src="./Images/js.svg" alt="Js" class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <img src="./Images/js.svg" alt="Js" loading="lazy"
+          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>JS</h1>
         </div>
@@ -275,7 +280,8 @@
 
       <!-- Card 4 -->
       <div class="md:px-5">
-        <img src="./Images/php.svg" alt="Php" class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <img src="./Images/php.svg" alt="Php" loading="lazy"
+          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>PHP</h1>
         </div>
@@ -283,7 +289,8 @@
 
       <!-- Card 5 -->
       <div class="md:px-5">
-        <img src="./Images/mysql.svg" alt="Mysql" class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+        <img src="./Images/mysql.svg" alt="Mysql" loading="lazy"
+          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>MySQL</h1>
         </div>
@@ -291,7 +298,7 @@
 
       <!-- Card 6 -->
       <div class="md:px-5">
-        <img src="./Images/bootstrap.svg" alt="bootstrap"
+        <img src="./Images/bootstrap.svg" alt="bootstrap" loading="lazy"
           class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>Bootstrap</h1>
@@ -300,7 +307,7 @@
 
       <!-- Card 7 -->
       <div class="md:px-5">
-        <img src="./Images/tailwind-css.svg" alt="tailwind"
+        <img src="./Images/tailwind-css.svg" alt="tailwind" loading="lazy"
           class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>Tailwind CSS</h1>
@@ -309,7 +316,7 @@
 
       <!-- Card 8 -->
       <div class="md:px-5">
-        <img src="./Images/jquery.svg" alt="jquery"
+        <img src="./Images/jquery.svg" alt="jquery" loading="lazy"
           class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>JQuery</h1>
@@ -318,7 +325,7 @@
 
       <!-- Card 9 -->
       <div class="md:px-5">
-        <img src="./Images/react.svg" alt="react js"
+        <img src="./Images/react.svg" alt="react js" loading="lazy"
           class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>React JS</h1>
@@ -330,7 +337,7 @@
   <!-- Services -->
   <div id="services" class="flex flex-col dark:text-white items-center py-10 px-3 md:px-5 lg:px-20">
     <div class="text-4xl md:text-5xl font-bold">
-      <h1 class="text-indigo-600">Services</h1>
+      <h1 class="text-indigo-600 dark:text-indigo-500">Services</h1>
     </div>
 
     <!-- Cards -->
@@ -338,7 +345,7 @@
       <!-- Card 1 -->
       <div
         class="py-10 px-3 md:px-5 lg:px-10 bg-slate-200 dark:bg-slate-800 rounded-lg text-center transition ease duration-500">
-        <h1 class="text-3xl font-semibold text-emerald-500 dark:text-emerald-300 transition ease duration-500">Website
+        <h1 class="text-3xl font-semibold text-emerald-600 dark:text-emerald-300 transition ease duration-500">Website
           development</h1>
         <p class="text-2xl mt-3">Want to promote your business using a website? I can help you create a website that
           will make it stand out from the competition. Contact for more details and pricing.</p>
@@ -347,7 +354,7 @@
       <!-- Card 2 -->
       <div
         class="py-10 px-3 md:px-5 lg:px-10 bg-slate-200 dark:bg-slate-800 rounded-lg text-center transition ease duration-500">
-        <h1 class="text-3xl font-semibold text-emerald-500 dark:text-emerald-300 transition ease duration-500">Web-app
+        <h1 class="text-3xl font-semibold text-emerald-600 dark:text-emerald-300 transition ease duration-500">Web-app
           development</h1>
         <p class="text-2xl mt-3">Want to create a fully functional website for your business? I can help you create a
           web-app that will fulfill all your requirements. Contact for more details and pricing</p>
@@ -358,7 +365,7 @@
   <!-- Contact -->
   <div id="contact" class="flex flex-col dark:text-white items-center py-10 px-3 md:px-5 lg:px-20">
     <div class="text-4xl md:text-5xl font-bold">
-      <h1 class="text-indigo-600">Contact</h1>
+      <h1 class="text-indigo-600 dark:text-indigo-500">Contact</h1>
     </div>
     <div class="grid lg:grid-cols-2 w-full place-items-center text-3xl pt-10 gap-5">
       <div class="flex items-center gap-x-3">
