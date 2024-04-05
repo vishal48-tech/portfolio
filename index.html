@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Cache-Control" content="public, max-age=86400">
+  <meta http-equiv="content-type" content="public, max-age=86400">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Build high quality website and web-app for your business and shine out among others. Visit the portfolio to know about me, my works, services, skills. Feel free to contact for any query.">
   <meta name="keywords"
-    content="Portfolio, Mondal Vishal, Website Development, Web-app Development, React, Tailwind, Javascript, JS, CSS, Html">
+    content="Portfolio, Website Development, Web-app Development">
   <meta name="author" content="Mondal Vishal">
   <meta property="og:image" content="https://vishal48-tech.github.io/portfolio/Images/portfolio-logo-192_x_192.webp">
   <meta property="og:image:width" content="1200">
@@ -18,14 +18,29 @@
   <link rel="apple-touch-icon" href="./Images/portfolio-logo-192_x_192.webp">
   <title>Portfolio [Mondal Vishal]</title>
   <style>
+    body::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background: white;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: rgb(168, 167, 167);
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+      background-color: rgb(168, 167, 167, 0.6);
+    }
     .gradient-text {
       animation: gradient 5s ease infinite;
       background-size: 200% 100%;
     }
 
-    .text-emerald {
+    /*.text-emerald {
       color: rgb(5 150 105);
-    }
+    }*/
 
     @keyframes gradient {
       0% {
@@ -33,7 +48,7 @@
       }
 
       100% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
       }
     }
   </style>
@@ -41,11 +56,15 @@
 
 <body class="bg-slate-100 dark:bg-slate-900 transition ease duration-500">
 
-  <!-- Navbar -->
+<!-- ===================================== -->
+<!-- -------------- Navbar --------------- -->
+<!-- ===================================== -->
   <nav
     class="bg-slate-300 dark:bg-slate-950 dark:text-gray-300 flex justify-between px-5 lg:px-20 py-2 text-lg font-semibold sticky top-0 w-full transition ease duration-500">
 
-    <!-- Menu-btn -->
+    <!-- ===================================== -->
+    <!-- ------------- Menu-btn -------------- -->
+    <!-- ===================================== -->
     <div class="flex items-center lg:hidden">
       <h1 class="sr-only">Menu button</h1>
       <button class="hover:ring-2 hover:ring-blue-900 rounded-md p-1" onclick="openMenu()">
@@ -56,15 +75,21 @@
       </button>
     </div>
 
-    <!-- Logo -->
+    <!-- ===================================== -->
+    <!-- --------------- Logo ---------------- -->
+    <!-- ===================================== -->
     <div class="flex items-center shrink-0">
 
-      <!-- Mobile theme change button -->
+      <!-- ===================================== -->
+      <!-- ----- Mobile theme change button ---- -->
+      <!-- ===================================== -->
       <h1 class="sr-only">Mobile theme change button</h1>
       <button class="lg:hidden" onclick="theme()">
-        <!-- Mobile moon -->
-        <svg id="mobile-moon" class="h-5 w-auto -rotate-45 dark:text-slate-500" version="1.1" id="Capa_1"
-          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56 56"
+        <!-- ===================================== -->
+        <!-- ----------- Mobile Moon ------------- -->
+        <!-- ===================================== -->
+        <svg id="mobile-moon" class="h-5 w-auto -rotate-45 dark:text-slate-500"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"
           xml:space="preserve" fill="currentColor">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -75,10 +100,11 @@
           </g>
         </svg>
 
-        <!-- Mobile sun -->
-        <svg id="mobile-sun" class="h-8 w-auto hidden text-slate-600 -mr-1" enable-background="new 0 0 512 512"
-          id="Layer_1" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!-- ===================================== -->
+        <!-- ------------ Mobile Sun ------------- -->
+        <!-- ===================================== -->
+        <svg id="mobile-sun" class="h-8 w-auto hidden text-slate-600 -mr-1"
+             viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
           <g>
             <g>
               <path
@@ -92,7 +118,9 @@
       <img src="./Images/portfolio-logo.webp" alt="portfolio-logo" loading="eager" class="h-8 w-auto my-1 ml-5 lg:ml-0">
     </div>
 
-    <!-- Desktop links -->
+    <!-- ===================================== -->
+    <!-- ----------- Desktop Links ----------- -->
+    <!-- ===================================== -->
     <div class="hidden lg:flex gap-x-3 items-center">
       <button onclick="scrollHome()"
         class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Home</button>
@@ -107,12 +135,16 @@
       <button onclick="scrollContact()"
         class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Contact</button>
 
-      <!-- Theme change button -->
+      <!-- ===================================== -->
+      <!-- -------- Theme change button -------- -->
+      <!-- ===================================== -->
       <h1 class="sr-only">Theme change button</h1>
       <button onclick="theme()">
-        <!-- Moon -->
-        <svg id="moon" class="h-5 w-auto -rotate-45 dark:text-slate-500" version="1.1"
-          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56 56"
+        <!-- ===================================== -->
+        <!-- --------------- Moon ---------------- -->
+        <!-- ===================================== -->
+        <svg id="moon" class="h-5 w-auto -rotate-45 dark:text-slate-500"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"
           xml:space="preserve" fill="currentColor">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -123,10 +155,11 @@
           </g>
         </svg>
 
-        <!-- Sun -->
-        <svg id="sun" class="h-8 w-auto hidden text-slate-600 -mr-1 -ml-2" enable-background="new 0 0 512 512"
-          version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!-- ===================================== -->
+        <!-- --------------- Sun ----------------- -->
+        <!-- ===================================== -->
+        <svg id="sun" class="h-8 w-auto hidden text-slate-600 -mr-1 -ml-2"
+          viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
           <g>
             <g>
               <path
@@ -139,7 +172,9 @@
     </div>
   </nav>
 
-  <!-- Mobile links -->
+<!-- ===================================== -->
+<!-- ----------- Mobile Links ------------ -->
+<!-- ===================================== -->
   <div id="menu"
     class="lg:hidden flex flex-col w-full items-center bg-slate-300 dark:bg-slate-950 dark:text-gray-300 px-2 text-lg font-semibold gap-y-2 py-2 -translate-x-full transition ease duration-700 fixed top-15">
     <button onclick="scrollHome(); openMenu();"
@@ -156,28 +191,32 @@
       class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Contact</button>
   </div>
 
-  <!-- Home -->
+<!-- ===================================== -->
+<!-- --------------- Home ---------------- -->
+<!-- ===================================== -->
   <div id="home" class="flex flex-col-reverse lg:flex-row lg:px-40 items-center justify-between py-10">
     <div
       class="text-4xl md:text-5xl flex flex-col gap-y-10 justify-center font-bold py-10 lg:py-0 items-center lg:items-start">
       <h1 class="dark:text-white text-black transition ease duration-500 text-center">Mondal Vishal</h1>
       <h1
         class="text-transparent bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text gradient-text pb-2 text-center">
-        Fullstack developer</h1>
+        React JS Developer</h1>
     </div>
     <div>
-      <img src="./Images/profile-pic-res.webp" alt="profile-picture" loading="eager" class="h-60 w-auto">
+      <img src="./Images/profile-pic.jpeg" alt="profile-picture" loading="eager" class="h-60 w-auto rounded-full">
     </div>
   </div>
 
-  <!-- About -->
+<!-- ===================================== -->
+<!-- -------------- About ---------------- -->
+<!-- ===================================== -->
   <div id="about"
     class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 pb-10 transition ease duration-500">
     <div class="text-4xl md:text-5xl font-bold">
       <h1 class="text-indigo-600 dark:text-indigo-500">About</h1>
     </div>
     <div class="text-3xl text-center flex flex-col gap-y-5">
-      <p>Hello! I'm Mondal Vishal, a Fullstack developer. I can create web-apps according to your need using the
+      <p>Hello! I'm Mondal Vishal, a React JS developer. I can create web-apps according to your need using the
         programming languages mentioned below in skills section.</p>
       <div class="flex justify-center items-center font-semibold">
         <button onclick="scrollSkill()"
@@ -191,19 +230,25 @@
     </div>
   </div>
 
-  <!-- Projects -->
+<!-- ===================================== -->
+<!-- ------------- Projects -------------- -->
+<!-- ===================================== -->
   <div id="projects"
     class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 transition ease duration-500">
     <div class="text-4xl md:text-5xl font-bold">
       <h1 class="text-indigo-600 dark:text-indigo-500">Projects</h1>
     </div>
 
-    <!-- Cards -->
-    <div class="flex flex-row flex-wrap justify-evenly w-full gap-x-5 gap-y-10">
-      <!-- Card 1 -->
-      <div class="md:px-3">
-        <img src="./Images/logo.svg" alt="Brandly" loading="lazy"
-          class="aspect-square h-60 my-5 object-cover object-center">
+    <!-- ===================================== -->
+    <!-- -------------- Cards ---------------- -->
+    <!-- ===================================== -->
+    <div class="flex flex-row flex-wrap justify-evenly w-full gap-10">
+      <!-- ===================================== -->
+      <!-- -------------- Card 1 --------------- -->
+      <!-- ===================================== -->
+      <div class="md:px-3 grid place-items-center">
+      <img src="./Images/logo.svg" alt="Brandly" loading="lazy"
+          class="aspect-square h-40 my-5 object-cover object-center">
         <div class="px-5">
           <h1 class="text-3xl font-semibold mb-2">Brandly</h1>
           <a href="https://github.com/vishal48-tech/brandly" target="_blank"
@@ -215,13 +260,15 @@
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="md:px-3">
-        <img src="./Images/todo-list.svg" alt="Todo web" loading="lazy"
-          class="aspect-square h-60 my-5 object-cover object-center">
+      <!-- ===================================== -->
+      <!-- -------------- Card 2 --------------- -->
+      <!-- ===================================== -->
+      <div class="md:px-3 grid place-items-center">
+        <img src="./Images/quiz.png" alt="quiz bulb" loading="lazy"
+          class="aspect-square h-40 my-5 object-cover object-center">
         <div class="px-5">
-          <h1 class="text-3xl font-semibold mb-2">Todo Web</h1>
-          <a href="https://vishal48-tech.github.io/todo-web/" target="_blank"
+          <h1 class="text-3xl font-semibold mb-2">React Quiz App</h1>
+          <a href="https://react-quiz-app-888.netlify.app/" target="_blank"
             class="flex items-center text-2xl dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 gap-x-2 transition ease duration-500">Visit
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-6 h-6 mt-2">
@@ -230,13 +277,15 @@
         </div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="md:px-3">
-        <img src="./Images/git-repository.svg" alt="Fetch github repos" loading="lazy"
-          class="aspect-square h-60 my-5 object-contain object-center">
+      <!-- ===================================== -->
+      <!-- -------------- Card 3 --------------- -->
+      <!-- ===================================== -->
+      <div class="md:px-3 grid place-items-center">
+      <img src="./Images/arrival-time-192_x_192.webp" alt="location time" loading="lazy"
+          class="aspect-square h-40 my-5 object-contain object-center">
         <div class="px-5">
-          <h1 class="text-3xl font-semibold mb-2">Fetch github repos</h1>
-          <a href="https://vishal48-tech.github.io/most-starred-repos/" target="_blank"
+          <h1 class="text-3xl font-semibold mb-2">Multiple Timezones</h1>
+          <a href="https://vishal48-tech.github.io/multiple-timezones/" target="_blank"
             class="flex items-center text-2xl dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 gap-x-2 transition ease duration-500">Visit
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-6 h-6 mt-2">
@@ -246,7 +295,9 @@
       </div>
     </div>
 
-    <!-- More projects -->
+    <!-- ===================================== -->
+    <!-- ---------- More Projects ------------ -->
+    <!-- ===================================== -->
     <div class="mt-10">
       <a href="https://github.com/vishal48-tech" target="_blank"
         class="text-2xl px-10 py-2 bg-blue-600 hover:bg-opacity-75 rounded-md text-white transition ease duration-500">More
@@ -254,127 +305,182 @@
     </div>
   </div>
 
-  <!-- Skills -->
+<!-- ===================================== -->
+<!-- -------------- Skills --------------- -->
+<!-- ===================================== -->
   <div id="skills"
     class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 transition ease duration-500">
     <div class="text-4xl md:text-5xl font-bold">
       <h1 class="text-indigo-600 dark:text-indigo-500">Skills</h1>
     </div>
 
-    <!-- Cards -->
-    <div class="flex flex-row flex-wrap justify-evenly w-full gap-x-5 gap-y-10">
-      <!-- Card 1 -->
+    <!-- ===================================== -->
+    <!-- --------------- Cards --------------- -->
+    <!-- ===================================== -->
+    <div class="flex flex-row flex-wrap justify-evenly w-full gap-10">
+      <!-- ===================================== -->
+      <!-- -------------- Card 1 --------------- -->
+      <!-- ===================================== -->
       <div class="md:px-5">
         <img src="./Images/html-5.svg" alt="Html" loading="lazy"
-          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>HTML</h1>
         </div>
       </div>
 
-      <!-- Card 2 -->
+      <!-- ===================================== -->
+      <!-- -------------- Card 2 --------------- -->
+      <!-- ===================================== -->
       <div class="md:px-5">
         <img src="./Images/css.svg" alt="Css" loading="lazy"
-          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>CSS</h1>
         </div>
       </div>
 
-      <!-- Card 3 -->
+      <!-- ===================================== -->
+      <!-- -------------- Card 3 --------------- -->
+      <!-- ===================================== -->
       <div class="md:px-5">
         <img src="./Images/js.svg" alt="Js" loading="lazy"
-          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>JS</h1>
         </div>
       </div>
 
-      <!-- Card 4 -->
+      <!-- ===================================== -->
+      <!-- -------------- Card 4 --------------- -->
+      <!-- ===================================== -->
       <div class="md:px-5">
         <img src="./Images/php.svg" alt="Php" loading="lazy"
-          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>PHP</h1>
         </div>
       </div>
 
-      <!-- Card 5 -->
+      <!-- ===================================== -->
+      <!-- -------------- Card 5 --------------- -->
+      <!-- ===================================== -->
       <div class="md:px-5">
         <img src="./Images/mysql.svg" alt="Mysql" loading="lazy"
-          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>MySQL</h1>
         </div>
       </div>
 
-      <!-- Card 6 -->
+      <!-- ===================================== -->
+      <!-- -------------- Card 6 --------------- -->
+      <!-- ===================================== -->
       <div class="md:px-5">
         <img src="./Images/bootstrap.svg" alt="bootstrap" loading="lazy"
-          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>Bootstrap</h1>
         </div>
       </div>
 
-      <!-- Card 7 -->
+      <!-- ===================================== -->
+      <!-- -------------- Card 7 --------------- -->
+      <!-- ===================================== -->
       <div class="md:px-5">
         <img src="./Images/tailwind-css.svg" alt="tailwind" loading="lazy"
-          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>Tailwind CSS</h1>
         </div>
       </div>
 
-      <!-- Card 8 -->
+      <!-- ===================================== -->
+      <!-- -------------- Card 8 --------------- -->
+      <!-- ===================================== -->
       <div class="md:px-5">
         <img src="./Images/jquery.svg" alt="jquery" loading="lazy"
-          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>JQuery</h1>
         </div>
       </div>
 
-      <!-- Card 9 -->
+      <!-- ===================================== -->
+      <!-- -------------- Card 9 --------------- -->
+      <!-- ===================================== -->
       <div class="md:px-5">
         <img src="./Images/react.svg" alt="react js" loading="lazy"
-          class="aspect-square h-60 my-5 object-cover object-center rounded-sm">
+          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>React JS</h1>
+        </div>
+      </div>
+
+      <!-- ===================================== -->
+      <!-- -------------- Card 10 --------------- -->
+      <!-- ===================================== -->
+      <div class="md:px-5">
+        <img src="./Images/flowbite_ui.svg" alt="flowbite" loading="lazy"
+          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
+        <div class="flex justify-center items-center text-3xl font-semibold">
+          <h1>FlowBite UI</h1>
+        </div>
+      </div>
+
+      <!-- ===================================== -->
+      <!-- -------------- Card 11 --------------- -->
+      <!-- ===================================== -->
+      <div class="md:px-5">
+        <img src="./Images/less_logo.png" alt="less" loading="lazy"
+             class="aspect-square h-40 my-5 object-contain object-center rounded-sm">
+        <div class="flex justify-center items-center text-3xl font-semibold">
+          <h1>Less CSS</h1>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Services -->
+  <!-- ===================================== -->
+  <!-- ------------- Services -------------- -->
+  <!-- ===================================== -->
   <div id="services" class="flex flex-col dark:text-white items-center py-10 px-3 md:px-5 lg:px-20">
     <div class="text-4xl md:text-5xl font-bold">
       <h1 class="text-indigo-600 dark:text-indigo-500">Services</h1>
     </div>
 
-    <!-- Cards -->
+    <!-- ===================================== -->
+    <!-- --------------- Cards --------------- -->
+    <!-- ===================================== -->
     <div class="grid lg:grid-cols-2 gap-x-10 gap-y-5 mt-5">
-      <!-- Card 1 -->
+      <!-- ===================================== -->
+      <!-- -------------- Card 1 --------------- -->
+      <!-- ===================================== -->
       <div
         class="py-10 px-3 md:px-5 lg:px-10 bg-slate-200 dark:bg-slate-800 rounded-lg text-center transition ease duration-500">
-        <h1 class="text-3xl font-semibold text-emerald dark:text-emerald-300 transition ease duration-500">Website
+        <h1 class="text-3xl font-semibold text-emerald-600 dark:text-emerald-300 transition ease duration-500">Website
           development</h1>
         <p class="text-2xl mt-3">Want to promote your business using a website? I can help you create a website that
           will make it stand out from the competition. Contact for more details and pricing.</p>
       </div>
 
-      <!-- Card 2 -->
+
+      <!-- ===================================== -->
+      <!-- -------------- Card 2 --------------- -->
+      <!-- ===================================== -->
       <div
         class="py-10 px-3 md:px-5 lg:px-10 bg-slate-200 dark:bg-slate-800 rounded-lg text-center transition ease duration-500">
-        <h1 class="text-3xl font-semibold text-emerald dark:text-emerald-300 transition ease duration-500">Web-app
+        <h1 class="text-3xl font-semibold text-emerald-600 dark:text-emerald-300 transition ease duration-500">Web-app
           development</h1>
         <p class="text-2xl mt-3">Want to create a fully functional website for your business? I can help you create a
-          web-app that will fulfill all your requirements. Contact for more details and pricing</p>
+          web-app that will fulfill all your requirements. Contact for more details and pricing.</p>
       </div>
     </div>
   </div>
 
-  <!-- Contact -->
+  <!-- ===================================== -->
+  <!-- -------------- Contact -------------- -->
+  <!-- ===================================== -->
   <div id="contact" class="flex flex-col dark:text-white items-center py-10 px-3 md:px-5 lg:px-20">
     <div class="text-4xl md:text-5xl font-bold">
       <h1 class="text-indigo-600 dark:text-indigo-500">Contact</h1>
@@ -397,9 +503,12 @@
         <h1 class="text-2xl break-all sm:text-3xl">+91 6353372889</h1>
       </div>
     </div>
+  </div>
 
     <script>
+      /* ------------------------- */
       /* Open mobile menu function */
+      /* ------------------------- */
       const openMenu = () => {
         document.getElementById("menu").classList.toggle("-translate-x-full");
         if (!document.getElementById("menu").classList.contains("duration-700")) {
@@ -408,7 +517,9 @@
         }
       }
 
+      /* --------------------- */
       /* Theme change function */
+      /* --------------------- */
       const theme = () => {
         document.documentElement.classList.toggle("dark");
         document.getElementById("moon").classList.toggle("hidden");
@@ -421,7 +532,9 @@
         }
       }
 
+      /* ---------------- */
       /* Scroll functions */
+      /* ---------------- */
       const scrollHome = () => {
         window.scroll({
           top: document.querySelector("#home").offsetTop - 50,
