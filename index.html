@@ -8,15 +8,32 @@
   <meta name="description"
     content="Build high quality website and web-app for your business and shine out among others. Visit the portfolio to know about me, my works, services, skills. Feel free to contact for any query.">
   <meta name="keywords"
-    content="Portfolio, Website Development, Web-app Development">
+    content="Portfolio, Website Development, Web-app Development,React JS, Tailwind css, JQuery, Javascript, Bootstrap, Less css">
   <meta name="author" content="Mondal Vishal">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mondal Vishal - Portfolio">
+  <meta property="og:description"
+    content="Build high quality website and web-app for your business and shine out among others. Visit the portfolio to know about me, my works, services, skills. Feel free to contact for any query.">
   <meta property="og:image" content="https://vishal48-tech.github.io/portfolio/Images/portfolio-logo-192_x_192.webp">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://vishal48-tech.github.io/portfolio/">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Mondal Vishal - Portfolio">
+  <meta property="twitter:description"
+    content="Build high quality website and web-app for your business and shine out among others. Visit the portfolio to know about me, my works, services, skills. Feel free to contact for any query.">
+  <meta property="twitter:image" content="https://vishal48-tech.github.io/portfolio/">
+
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+
   <link href="./output.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="./Images/portfolio-logo.ico">
   <link rel="apple-touch-icon" href="./Images/portfolio-logo-192_x_192.webp">
-  <title>Portfolio [Mondal Vishal]</title>
+  <title>Mondal Vishal - Portfolio</title>
   <style>
     body::-webkit-scrollbar {
       width: 2px;
@@ -33,14 +50,11 @@
     body::-webkit-scrollbar-thumb:hover {
       background-color: rgb(168, 167, 167, 0.6);
     }
+
     .gradient-text {
       animation: gradient 5s ease infinite;
       background-size: 200% 100%;
     }
-
-    /*.text-emerald {
-      color: rgb(5 150 105);
-    }*/
 
     @keyframes gradient {
       0% {
@@ -56,9 +70,9 @@
 
 <body class="bg-slate-100 dark:bg-slate-900 transition ease duration-500">
 
-<!-- ===================================== -->
-<!-- -------------- Navbar --------------- -->
-<!-- ===================================== -->
+  <!-- ===================================== -->
+  <!-- -------------- Navbar --------------- -->
+  <!-- ===================================== -->
   <nav
     class="bg-slate-300 dark:bg-slate-950 dark:text-gray-300 flex justify-between px-5 lg:px-20 py-2 text-lg font-semibold sticky top-0 w-full transition ease duration-500">
 
@@ -88,9 +102,8 @@
         <!-- ===================================== -->
         <!-- ----------- Mobile Moon ------------- -->
         <!-- ===================================== -->
-        <svg id="mobile-moon" class="h-5 w-auto -rotate-45 dark:text-slate-500"
-          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"
-          xml:space="preserve" fill="currentColor">
+        <svg id="mobile-moon" class="h-5 w-auto -rotate-45 dark:text-slate-500" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 56 56" xml:space="preserve" fill="currentColor">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="SVGRepo_iconCarrier">
@@ -103,8 +116,8 @@
         <!-- ===================================== -->
         <!-- ------------ Mobile Sun ------------- -->
         <!-- ===================================== -->
-        <svg id="mobile-sun" class="h-8 w-auto hidden text-slate-600 -mr-1"
-             viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+        <svg id="mobile-sun" class="h-8 w-auto hidden text-slate-600 -mr-1" viewBox="0 0 512 512" xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg">
           <g>
             <g>
               <path
@@ -143,9 +156,8 @@
         <!-- ===================================== -->
         <!-- --------------- Moon ---------------- -->
         <!-- ===================================== -->
-        <svg id="moon" class="h-5 w-auto -rotate-45 dark:text-slate-500"
-          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"
-          xml:space="preserve" fill="currentColor">
+        <svg id="moon" class="h-5 w-auto -rotate-45 dark:text-slate-500" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 56 56" xml:space="preserve" fill="currentColor">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="SVGRepo_iconCarrier">
@@ -158,8 +170,8 @@
         <!-- ===================================== -->
         <!-- --------------- Sun ----------------- -->
         <!-- ===================================== -->
-        <svg id="sun" class="h-8 w-auto hidden text-slate-600 -mr-1 -ml-2"
-          viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+        <svg id="sun" class="h-8 w-auto hidden text-slate-600 -mr-1 -ml-2" viewBox="0 0 512 512" xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg">
           <g>
             <g>
               <path
@@ -172,9 +184,9 @@
     </div>
   </nav>
 
-<!-- ===================================== -->
-<!-- ----------- Mobile Links ------------ -->
-<!-- ===================================== -->
+  <!-- ===================================== -->
+  <!-- ----------- Mobile Links ------------ -->
+  <!-- ===================================== -->
   <div id="menu"
     class="lg:hidden flex flex-col w-full items-center bg-slate-300 dark:bg-slate-950 dark:text-gray-300 px-2 text-lg font-semibold gap-y-2 py-2 -translate-x-full transition ease duration-700 fixed top-15">
     <button onclick="scrollHome(); openMenu();"
@@ -191,9 +203,9 @@
       class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Contact</button>
   </div>
 
-<!-- ===================================== -->
-<!-- --------------- Home ---------------- -->
-<!-- ===================================== -->
+  <!-- ===================================== -->
+  <!-- --------------- Home ---------------- -->
+  <!-- ===================================== -->
   <div id="home" class="flex flex-col-reverse lg:flex-row lg:px-40 items-center justify-between py-10">
     <div
       class="text-4xl md:text-5xl flex flex-col gap-y-10 justify-center font-bold py-10 lg:py-0 items-center lg:items-start">
@@ -207,9 +219,9 @@
     </div>
   </div>
 
-<!-- ===================================== -->
-<!-- -------------- About ---------------- -->
-<!-- ===================================== -->
+  <!-- ===================================== -->
+  <!-- -------------- About ---------------- -->
+  <!-- ===================================== -->
   <div id="about"
     class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 pb-10 transition ease duration-500">
     <div class="text-4xl md:text-5xl font-bold">
@@ -230,9 +242,9 @@
     </div>
   </div>
 
-<!-- ===================================== -->
-<!-- ------------- Projects -------------- -->
-<!-- ===================================== -->
+  <!-- ===================================== -->
+  <!-- ------------- Projects -------------- -->
+  <!-- ===================================== -->
   <div id="projects"
     class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 transition ease duration-500">
     <div class="text-4xl md:text-5xl font-bold">
@@ -247,7 +259,7 @@
       <!-- -------------- Card 1 --------------- -->
       <!-- ===================================== -->
       <div class="md:px-3 grid place-items-center">
-      <img src="./Images/logo.svg" alt="Brandly" loading="lazy"
+        <img src="./Images/logo.svg" alt="Brandly" loading="lazy"
           class="aspect-square h-40 my-5 object-cover object-center">
         <div class="px-5">
           <h1 class="text-3xl font-semibold mb-2">Brandly</h1>
@@ -281,7 +293,7 @@
       <!-- -------------- Card 3 --------------- -->
       <!-- ===================================== -->
       <div class="md:px-3 grid place-items-center">
-      <img src="./Images/arrival-time-192_x_192.webp" alt="location time" loading="lazy"
+        <img src="./Images/arrival-time-192_x_192.webp" alt="location time" loading="lazy"
           class="aspect-square h-40 my-5 object-contain object-center">
         <div class="px-5">
           <h1 class="text-3xl font-semibold mb-2">Multiple Timezones</h1>
@@ -305,9 +317,9 @@
     </div>
   </div>
 
-<!-- ===================================== -->
-<!-- -------------- Skills --------------- -->
-<!-- ===================================== -->
+  <!-- ===================================== -->
+  <!-- -------------- Skills --------------- -->
+  <!-- ===================================== -->
   <div id="skills"
     class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 transition ease duration-500">
     <div class="text-4xl md:text-5xl font-bold">
@@ -433,7 +445,7 @@
       <!-- ===================================== -->
       <div class="md:px-5">
         <img src="./Images/less_logo.png" alt="less" loading="lazy"
-             class="aspect-square h-40 my-5 object-contain object-center rounded-sm">
+          class="aspect-square h-40 my-5 object-contain object-center rounded-sm">
         <div class="flex justify-center items-center text-3xl font-semibold">
           <h1>Less CSS</h1>
         </div>
@@ -505,73 +517,73 @@
     </div>
   </div>
 
-    <script>
-      /* ------------------------- */
-      /* Open mobile menu function */
-      /* ------------------------- */
-      const openMenu = () => {
-        document.getElementById("menu").classList.toggle("-translate-x-full");
-        if (!document.getElementById("menu").classList.contains("duration-700")) {
-          document.getElementById("menu").classList.remove("duration-500");
-          document.getElementById("menu").classList.add("duration-700");
-        }
+  <script>
+    /* ------------------------- */
+    /* Open mobile menu function */
+    /* ------------------------- */
+    const openMenu = () => {
+      document.getElementById("menu").classList.toggle("-translate-x-full");
+      if (!document.getElementById("menu").classList.contains("duration-700")) {
+        document.getElementById("menu").classList.remove("duration-500");
+        document.getElementById("menu").classList.add("duration-700");
       }
+    }
 
-      /* --------------------- */
-      /* Theme change function */
-      /* --------------------- */
-      const theme = () => {
-        document.documentElement.classList.toggle("dark");
-        document.getElementById("moon").classList.toggle("hidden");
-        document.getElementById("sun").classList.toggle("hidden");
-        document.getElementById("mobile-moon").classList.toggle("hidden");
-        document.getElementById("mobile-sun").classList.toggle("hidden");
-        if (document.getElementById("menu").classList.contains("duration-700")) {
-          document.getElementById("menu").classList.add("duration-500");
-          document.getElementById("menu").classList.remove("duration-700");
-        }
+    /* --------------------- */
+    /* Theme change function */
+    /* --------------------- */
+    const theme = () => {
+      document.documentElement.classList.toggle("dark");
+      document.getElementById("moon").classList.toggle("hidden");
+      document.getElementById("sun").classList.toggle("hidden");
+      document.getElementById("mobile-moon").classList.toggle("hidden");
+      document.getElementById("mobile-sun").classList.toggle("hidden");
+      if (document.getElementById("menu").classList.contains("duration-700")) {
+        document.getElementById("menu").classList.add("duration-500");
+        document.getElementById("menu").classList.remove("duration-700");
       }
+    }
 
-      /* ---------------- */
-      /* Scroll functions */
-      /* ---------------- */
-      const scrollHome = () => {
-        window.scroll({
-          top: document.querySelector("#home").offsetTop - 50,
-          behavior: "smooth",
-        })
-      }
-      const scrollAbout = () => {
-        window.scroll({
-          top: document.querySelector("#about").offsetTop - 50,
-          behavior: "smooth",
-        })
-      }
-      const scrollProject = () => {
-        window.scroll({
-          top: document.querySelector("#projects").offsetTop - 50,
-          behavior: "smooth",
-        })
-      }
-      const scrollSkill = () => {
-        window.scroll({
-          top: document.querySelector("#skills").offsetTop - 50,
-          behavior: "smooth",
-        })
-      }
-      const scrollService = () => {
-        window.scroll({
-          top: document.querySelector("#services").offsetTop - 50,
-          behavior: "smooth",
-        })
-      }
-      const scrollContact = () => {
-        window.scroll({
-          top: document.querySelector("#contact").offsetTop - 50,
-          behavior: "smooth",
-        })
-      }
-    </script>
+    /* ---------------- */
+    /* Scroll functions */
+    /* ---------------- */
+    const scrollHome = () => {
+      window.scroll({
+        top: document.querySelector("#home").offsetTop - 50,
+        behavior: "smooth",
+      })
+    }
+    const scrollAbout = () => {
+      window.scroll({
+        top: document.querySelector("#about").offsetTop - 50,
+        behavior: "smooth",
+      })
+    }
+    const scrollProject = () => {
+      window.scroll({
+        top: document.querySelector("#projects").offsetTop - 50,
+        behavior: "smooth",
+      })
+    }
+    const scrollSkill = () => {
+      window.scroll({
+        top: document.querySelector("#skills").offsetTop - 50,
+        behavior: "smooth",
+      })
+    }
+    const scrollService = () => {
+      window.scroll({
+        top: document.querySelector("#services").offsetTop - 50,
+        behavior: "smooth",
+      })
+    }
+    const scrollContact = () => {
+      window.scroll({
+        top: document.querySelector("#contact").offsetTop - 50,
+        behavior: "smooth",
+      })
+    }
+  </script>
 </body>
 
 </html>
