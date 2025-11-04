@@ -265,7 +265,7 @@
           class="aspect-square h-40 my-5 object-cover object-center">
         <div class="px-5">
           <h1 class="text-3xl font-semibold mb-2">Brandly</h1>
-          <a href="https://github.com/vishal48-tech/brandly" target="_blank"
+          <a href="https://brandly.gt.tc/" target="_blank"
             class="flex items-center text-2xl dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 gap-x-2 transition ease duration-500">Visit
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-6 h-6 mt-2">
@@ -278,11 +278,11 @@
       <!-- -------------- Card 2 --------------- -->
       <!-- ===================================== -->
       <div class="md:px-3 grid place-items-center">
-        <img src="./Images/quiz.png" alt="quiz bulb" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center">
+        <img src="./Images/Render logomark - White.svg" alt="bwt predict" loading="lazy"
+          class="aspect-square h-40 my-5 object-cover object-center" id="render-logo">
         <div class="px-5">
-          <h1 class="text-3xl font-semibold mb-2">React Quiz App</h1>
-          <a href="https://react-quiz-app-888.netlify.app/" target="_blank"
+          <h1 class="text-3xl font-semibold mb-2">Birth weight predict</h1>
+          <a href="https://birth-weight-prediction-0fta.onrender.com/" target="_blank"
             class="flex items-center text-2xl dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 gap-x-2 transition ease duration-500">Visit
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-6 h-6 mt-2">
@@ -551,6 +551,10 @@
         document.getElementById("menu").classList.add("duration-500");
         document.getElementById("menu").classList.remove("duration-700");
       }
+      const logo = document.getElementById("render-logo");
+      logo.src = document.documentElement.classList.contains("dark")
+      ? "./Images/Render logomark - White.svg"
+      : "./Images/Render logomark - Black.svg";
     }
 
     /* ---------------- */
