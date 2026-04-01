@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta http-equiv="content-type" content="public, max-age=86400">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ======== Meta tags ======= -->
   <meta name="description"
     content="Transform your online presence with bespoke websites and web applications tailored to elevate your business above the competition. Explore my portfolio to discover a showcase of my exceptional work, services, and skills. Whether you're seeking a stunning website or a dynamic web application, I'm here to bring your vision to life. Don't hesitate to reach out with any inquiries or to discuss your project requirements further.">
   <meta name="keywords"
@@ -33,570 +34,483 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
 
-  <link href="./output.css" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="./Images/portfolio-logo.ico">
-  <link rel="apple-touch-icon" href="./Images/portfolio-logo-192_x_192.webp">
-  <title>Mondal Vishal - Portfolio</title>
-  <style>
-    body::-webkit-scrollbar {
-      width: 2px;
-    }
+  <link rel="icon" type="image/x-icon" href="https://vishal48-tech.github.io/portfolio/Images/portfolio-logo.ico">
+  <link rel="apple-touch-icon" href="https://vishal48-tech.github.io/portfolio/Images/portfolio-logo-192_x_192.webp">
 
-    body::-webkit-scrollbar-track {
-      background: white;
-    }
+  <!-- ========= Title ========== -->
+  <title>Mondal Vishal — Portfolio</title>
 
-    body::-webkit-scrollbar-thumb {
-      background-color: rgb(168, 167, 167);
-    }
+  <!-- CSS -->
+   <link rel="stylesheet" href="./style.css">
 
-    body::-webkit-scrollbar-thumb:hover {
-      background-color: rgb(168, 167, 167, 0.6);
-    }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 
-    .gradient-text {
-      animation: gradient 5s ease infinite;
-      background-size: 200% 100%;
-    }
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    @keyframes gradient {
-      0% {
-        background-position: 200% 50%;
-      }
-
-      100% {
-        background-position: 0 50%;
-      }
-    }
-  </style>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
-<body class="bg-slate-100 dark:bg-slate-900 transition ease duration-500">
+<body class="light" id="body">
 
-  <!-- ===================================== -->
-  <!-- -------------- Navbar --------------- -->
-  <!-- ===================================== -->
-  <nav
-    class="bg-slate-300 dark:bg-slate-950 dark:text-gray-300 flex justify-between px-5 lg:px-20 py-2 text-lg font-semibold sticky top-0 w-full transition ease duration-500">
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <header id="navbar" class="nav-bg fixed top-0 left-0 right-0 z-50 items-center">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
-    <!-- ===================================== -->
-    <!-- ------------- Menu-btn -------------- -->
-    <!-- ===================================== -->
-    <div class="flex items-center lg:hidden">
-      <h1 class="sr-only">Menu button</h1>
-      <button class="hover:ring-2 hover:ring-blue-900 rounded-md p-1" onclick="openMenu()">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
-        </svg>
-      </button>
-    </div>
+      <!-- Logo -->
+      <a href="#home" class="font-display font-800 text-lg tracking-tight flex items-center gap-2" style="font-family:'Syne',sans-serif; font-weight:800; text-decoration:none; color:inherit;">
+        <span class="w-7 h-7 rounded-lg flex items-center justify-center text-white text-sm font-bold" style="background:var(--accent);">V</span>
+        <!-- <span>Mondal <span class="accent-text">Vishal</span></span> -->
+      </a>
 
-    <!-- ===================================== -->
-    <!-- --------------- Logo ---------------- -->
-    <!-- ===================================== -->
-    <div class="flex items-center shrink-0">
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#home"     class="nav-link active">Home</a>
+        <a href="#about"    class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills"   class="nav-link">Skills</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#contact"  class="nav-link">Contact</a>
+      </div>
 
-      <!-- ===================================== -->
-      <!-- ----- Mobile theme change button ---- -->
-      <!-- ===================================== -->
-      <h1 class="sr-only">Mobile theme change button</h1>
-      <button class="lg:hidden" onclick="theme()">
-        <!-- ===================================== -->
-        <!-- ----------- Mobile Moon ------------- -->
-        <!-- ===================================== -->
-        <svg id="mobile-moon" class="h-5 w-auto -rotate-45 dark:text-slate-500" xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 56 56" xml:space="preserve" fill="currentColor">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M29,28c0-11.917,7.486-22.112,18-26.147C43.892,0.66,40.523,0,37,0C21.561,0,9,12.561,9,28 s12.561,28,28,28c3.523,0,6.892-0.66,10-1.853C36.486,50.112,29,39.917,29,28z">
-            </path>
-          </g>
-        </svg>
-
-        <!-- ===================================== -->
-        <!-- ------------ Mobile Sun ------------- -->
-        <!-- ===================================== -->
-        <svg id="mobile-sun" class="h-8 w-auto hidden text-slate-600 -mr-1" viewBox="0 0 512 512" xml:space="preserve"
-          xmlns="http://www.w3.org/2000/svg">
-          <g>
-            <g>
-              <path
-                d="M256,144c-61.75,0-112,50.25-112,112c0,61.749,50.25,112,112,112s112-50.251,112-112    C368,194.25,317.75,144,256,144z M256,112c8.833,0,16-7.146,16-16V64c0-8.833-7.167-16-16-16c-8.854,0-16,7.167-16,16v32    C240,104.854,247.146,112,256,112z M256,400c-8.854,0-16,7.167-16,16v32c0,8.854,7.146,16,16,16c8.833,0,16-7.146,16-16v-32    C272,407.167,264.833,400,256,400z M380.417,154.167l22.625-22.625c6.25-6.25,6.25-16.375,0-22.625    c-6.251-6.25-16.375-6.25-22.625,0l-22.625,22.625c-6.251,6.25-6.251,16.375,0,22.625    C364.042,160.416,374.166,160.416,380.417,154.167z M131.541,357.854l-22.623,22.625c-6.252,6.25-6.252,16.377,0,22.625    c6.249,6.25,16.373,6.25,22.623,0l22.625-22.625c6.251-6.291,6.251-16.375,0-22.625    C147.917,351.604,137.792,351.562,131.541,357.854z M112,256c0-8.833-7.167-16-16-16H64c-8.854,0-16,7.167-16,16    c0,8.854,7.146,16,16,16h32C104.833,272,112,264.854,112,256z M448,240h-32c-8.854,0-16,7.167-16,16c0,8.854,7.146,16,16,16h32    c8.833,0,16-7.146,16-16C464,247.167,456.833,240,448,240z M131.521,154.167c6.249,6.25,16.375,6.25,22.625,0    c6.249-6.25,6.249-16.375,0-22.625l-22.625-22.625c-6.25-6.25-16.376-6.25-22.625,0c-6.25,6.25-6.25,16.375,0,22.625    L131.521,154.167z M380.459,357.812c-6.293-6.25-16.376-6.25-22.625,0c-6.25,6.248-6.293,16.375,0,22.625l22.625,22.625    c6.249,6.248,16.374,6.248,22.625,0c6.249-6.25,6.249-16.377,0-22.625L380.459,357.812z"
-                fill="currentColor" />
-            </g>
-          </g>
-        </svg>
-      </button>
-
-      <img src="./Images/portfolio-logo.webp" alt="portfolio-logo" loading="eager" class="h-8 w-auto my-1 ml-5 lg:ml-0">
-    </div>
-
-    <!-- ===================================== -->
-    <!-- ----------- Desktop Links ----------- -->
-    <!-- ===================================== -->
-    <div class="hidden lg:flex gap-x-3 items-center">
-      <button onclick="scrollHome()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Home</button>
-      <button onclick="scrollAbout()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">About</button>
-      <button onclick="scrollProject()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Projects</button>
-      <button onclick="scrollSkill()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Skills</button>
-      <button onclick="scrollService()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Services</button>
-      <button onclick="scrollContact()"
-        class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md transition ease duration-500">Contact</button>
-
-      <!-- ===================================== -->
-      <!-- -------- Theme change button -------- -->
-      <!-- ===================================== -->
-      <h1 class="sr-only">Theme change button</h1>
-      <button onclick="theme()">
-        <!-- ===================================== -->
-        <!-- --------------- Moon ---------------- -->
-        <!-- ===================================== -->
-        <svg id="moon" class="h-5 w-auto -rotate-45 dark:text-slate-500" xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 56 56" xml:space="preserve" fill="currentColor">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M29,28c0-11.917,7.486-22.112,18-26.147C43.892,0.66,40.523,0,37,0C21.561,0,9,12.561,9,28 s12.561,28,28,28c3.523,0,6.892-0.66,10-1.853C36.486,50.112,29,39.917,29,28z">
-            </path>
-          </g>
-        </svg>
-
-        <!-- ===================================== -->
-        <!-- --------------- Sun ----------------- -->
-        <!-- ===================================== -->
-        <svg id="sun" class="h-8 w-auto hidden text-slate-600 -mr-1 -ml-2" viewBox="0 0 512 512" xml:space="preserve"
-          xmlns="http://www.w3.org/2000/svg">
-          <g>
-            <g>
-              <path
-                d="M256,144c-61.75,0-112,50.25-112,112c0,61.749,50.25,112,112,112s112-50.251,112-112    C368,194.25,317.75,144,256,144z M256,112c8.833,0,16-7.146,16-16V64c0-8.833-7.167-16-16-16c-8.854,0-16,7.167-16,16v32    C240,104.854,247.146,112,256,112z M256,400c-8.854,0-16,7.167-16,16v32c0,8.854,7.146,16,16,16c8.833,0,16-7.146,16-16v-32    C272,407.167,264.833,400,256,400z M380.417,154.167l22.625-22.625c6.25-6.25,6.25-16.375,0-22.625    c-6.251-6.25-16.375-6.25-22.625,0l-22.625,22.625c-6.251,6.25-6.251,16.375,0,22.625    C364.042,160.416,374.166,160.416,380.417,154.167z M131.541,357.854l-22.623,22.625c-6.252,6.25-6.252,16.377,0,22.625    c6.249,6.25,16.373,6.25,22.623,0l22.625-22.625c6.251-6.291,6.251-16.375,0-22.625    C147.917,351.604,137.792,351.562,131.541,357.854z M112,256c0-8.833-7.167-16-16-16H64c-8.854,0-16,7.167-16,16    c0,8.854,7.146,16,16,16h32C104.833,272,112,264.854,112,256z M448,240h-32c-8.854,0-16,7.167-16,16c0,8.854,7.146,16,16,16h32    c8.833,0,16-7.146,16-16C464,247.167,456.833,240,448,240z M131.521,154.167c6.249,6.25,16.375,6.25,22.625,0    c6.249-6.25,6.249-16.375,0-22.625l-22.625-22.625c-6.25-6.25-16.376-6.25-22.625,0c-6.25,6.25-6.25,16.375,0,22.625    L131.521,154.167z M380.459,357.812c-6.293-6.25-16.376-6.25-22.625,0c-6.25,6.248-6.293,16.375,0,22.625l22.625,22.625    c6.249,6.248,16.374,6.248,22.625,0c6.249-6.25,6.249-16.377,0-22.625L380.459,357.812z"
-                fill="currentColor" />
-            </g>
-          </g>
-        </svg>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ===================================== -->
-  <!-- ----------- Mobile Links ------------ -->
-  <!-- ===================================== -->
-  <div id="menu"
-    class="lg:hidden flex flex-col w-full items-center bg-slate-300 dark:bg-slate-950 dark:text-gray-300 px-2 text-lg font-semibold gap-y-2 py-2 -translate-x-full transition ease duration-700 fixed top-15">
-    <button onclick="scrollHome(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Home</button>
-    <button onclick="scrollAbout(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">About</button>
-    <button onclick="scrollProject(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Projects</button>
-    <button onclick="scrollSkill(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Skills</button>
-    <button onclick="scrollService(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Services</button>
-    <button onclick="scrollContact(); openMenu();"
-      class="hover:bg-slate-400 hover:text-black text-slate-600 dark:text-slate-500 dark:hover:text-white dark:hover:bg-slate-700 px-5 py-1 rounded-md w-full flex justify-center">Contact</button>
-  </div>
-
-  <!-- ===================================== -->
-  <!-- --------------- Home ---------------- -->
-  <!-- ===================================== -->
-  <div id="home" class="flex flex-col-reverse lg:flex-row lg:px-40 items-center justify-between py-10">
-    <div
-      class="text-4xl md:text-5xl flex flex-col gap-y-10 justify-center font-bold py-10 lg:py-0 items-center lg:items-start">
-      <h1 class="dark:text-white text-black transition ease duration-500 text-center">Mondal Vishal</h1>
-      <h1
-        class="text-transparent bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text gradient-text pb-2 text-center">
-        Python Developer</h1>
-    </div>
-    <div>
-      <img src="./Images/profile-pic.jpg" alt="profile-picture" loading="eager" class="h-60 w-auto rounded-full">
-    </div>
-  </div>
-
-  <!-- ===================================== -->
-  <!-- -------------- About ---------------- -->
-  <!-- ===================================== -->
-  <div id="about"
-    class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 pb-10 transition ease duration-500">
-    <div class="text-4xl md:text-5xl font-bold">
-      <h1 class="text-indigo-600 dark:text-indigo-500">About</h1>
-    </div>
-    <div class="text-3xl text-center flex flex-col gap-y-5">
-      <p>Hello! I'm Mondal Vishal. I am learning Data Science with Generative AI. I have created many practice projects using various programming languages metioned below in skills secion.</p>
-      <div class="flex justify-center items-center font-semibold">
-        <button onclick="scrollSkill()"
-          class="dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 flex items-center gap-x-2 transition ease duration-500">Skills
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-6 h-6 mt-2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+      <!-- Right controls -->
+      <div class="flex items-center gap-3">
+        <!-- Theme toggle -->
+        <button id="themeToggle" aria-label="Toggle theme"
+          class="w-9 h-9 rounded-lg flex items-center justify-center transition-all hover:scale-110"
+          style="background:rgba(168,85,247,0.1); color:var(--accent);">
+          <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
         </button>
+
+        <!-- Hamburger -->
+        <button id="hamburger" class="md:hidden flex flex-col gap-[5px] p-2" aria-label="Menu">
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mobile-menu hidden md:hidden px-6 py-4 flex flex-col gap-4">
+      <a href="#home"     class="nav-link py-1" onclick="closeMenu()">Home</a>
+      <a href="#about"    class="nav-link py-1" onclick="closeMenu()">About</a>
+      <a href="#projects" class="nav-link py-1" onclick="closeMenu()">Projects</a>
+      <a href="#skills"   class="nav-link py-1" onclick="closeMenu()">Skills</a>
+      <a href="#services" class="nav-link py-1" onclick="closeMenu()">Services</a>
+      <a href="#contact"  class="nav-link py-1" onclick="closeMenu()">Contact</a>
+    </div>
+  </header>
+
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-16">
+    <!-- Orbs -->
+    <div class="orb w-96 h-96" style="background:#a855f7; top:-80px; right:-60px;"></div>
+    <div class="orb w-64 h-64" style="background:#6366f1; bottom:80px; left:-40px;"></div>
+
+    <div class="max-w-6xl mx-auto px-6 w-full py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- Left: Text -->
+        <div>
+          <div id="hero-badge" class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full text-xs font-semibold" style="background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.25); color:var(--accent); font-family:'Syne',sans-serif; letter-spacing:0.08em;">
+            <span class="w-2 h-2 rounded-full animate-pulse" style="background:var(--accent);"></span>
+            AVAILABLE FOR WORK
+          </div>
+
+          <h1 id="hero-name" class="font-display text-5xl md:text-6xl font-extrabold leading-tight mb-3" style="font-family:'Syne',sans-serif; letter-spacing:-0.02em;">
+            Mondal<br><span class="accent-text">Vishal</span>
+          </h1>
+
+          <div class="text-xl md:text-2xl font-medium mb-6 flex items-center gap-2" style="font-family:'Syne',sans-serif;">
+            <span class="hero-sub">I'm a </span>
+            <span id="typewriter" class="accent-text font-bold"></span><span class="cursor-blink"></span>
+          </div>
+
+          <p id="hero-desc" class="hero-sub text-base md:text-lg leading-relaxed mb-8 max-w-md">
+            Currently learning <strong>Data Science with Generative AI</strong> at PW Skills. I build intelligent web apps and data-driven solutions that make an impact.
+          </p>
+
+          <div id="hero-btns" class="flex flex-wrap gap-3 mb-8">
+            <a href="#projects" class="btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              View Projects
+            </a>
+            <a href="./Resume Vishal 2026.pdf" class="btn-outline" download>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
+              Download CV
+            </a>
+          </div>
+
+          <!-- Socials -->
+          <div id="hero-socials" class="flex items-center gap-3">
+            <a href="https://github.com/vishal48-tech" target="_blank" rel="noopener"
+               class="w-10 h-10 rounded-lg flex items-center justify-center transition-all hover:scale-110"
+               style="background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.2);" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--accent)">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/vishal-mondal" target="_blank" rel="noopener"
+               class="w-10 h-10 rounded-lg flex items-center justify-center transition-all hover:scale-110"
+               style="background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.2);" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style="color:var(--accent)">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <div class="divider h-5 w-px mx-1"></div>
+            <span class="hero-sub text-sm" style="font-family:'DM Sans',sans-serif;">Let's connect</span>
+          </div>
+        </div>
+
+        <!-- Right: Profile -->
+        <div id="hero-img" class="flex justify-center md:justify-end">
+          <div class="relative">
+            <!-- Rotating ring -->
+            <div class="profile-ring" style="width:240px;height:240px;">
+              <img src="https://vishal48-tech.github.io/portfolio/Images/profile-pic.jpg"
+                   alt="Mondal Vishal"
+                   class="w-full h-full object-cover rounded-full"
+                   style="border:4px solid transparent; background-clip:padding-box;" />
+            </div>
+            <!-- Floating badge -->
+            <div class="absolute -bottom-3 -right-3 px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5"
+                 style="background:var(--accent); color:#fff; font-family:'Syne',sans-serif; box-shadow:0 8px 24px var(--accent-glow);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              Data Science
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ===================================== -->
-  <!-- ------------- Projects -------------- -->
-  <!-- ===================================== -->
-  <div id="projects"
-    class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 transition ease duration-500">
-    <div class="text-4xl md:text-5xl font-bold">
-      <h1 class="text-indigo-600 dark:text-indigo-500">Projects</h1>
-    </div>
+  <div class="gradient-line max-w-6xl mx-auto px-6"></div>
 
-    <!-- ===================================== -->
-    <!-- -------------- Cards ---------------- -->
-    <!-- ===================================== -->
-    <div class="flex flex-row flex-wrap justify-evenly w-full gap-10">
-      <!-- ===================================== -->
-      <!-- -------------- Card 1 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-3 grid place-items-center">
-        <img src="./Images/logo.svg" alt="Brandly" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center">
-        <div class="px-5">
-          <h1 class="text-3xl font-semibold mb-2">Brandly</h1>
-          <a href="https://brandly.gt.tc/" target="_blank"
-            class="flex items-center text-2xl dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 gap-x-2 transition ease duration-500">Visit
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-6 h-6 mt-2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-            </svg></a>
+
+  <!-- ══════════════ ABOUT ══════════════ -->
+  <section id="about" class="py-24 relative overflow-hidden">
+    <div class="orb w-72 h-72" style="background:#7c3aed; top:50%; right:-80px; transform:translateY(-50%);"></div>
+
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="fade-up mb-4"><span class="section-label">// about me</span></div>
+      <h2 class="fade-up font-display text-4xl md:text-5xl font-extrabold mb-12" style="font-family:'Syne',sans-serif; letter-spacing:-0.02em;">
+        Who I <span class="accent-text">Am</span>
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="fade-up">
+          <p class="about-text text-lg leading-relaxed mb-6">
+            Hello! I'm <strong>Mondal Vishal</strong>, a passionate developer and aspiring Data Scientist. I'm currently deepening my expertise in <strong>Data Science with Generative AI</strong> at <span class="accent-text font-semibold">PW Skills</span>.
+          </p>
+          <p class="about-text text-lg leading-relaxed mb-8">
+            I enjoy building intelligent, data-driven applications and have worked across various web technologies. From crafting smooth frontends to writing Python automation scripts, I love turning ideas into real products.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="tag">Data Science</span>
+            <span class="tag">Gen AI</span>
+            <span class="tag">Web Dev</span>
+            <span class="tag">Python</span>
+            <!-- <span class="tag">PW Skills</span> -->
+          </div>
         </div>
-      </div>
 
-      <!-- ===================================== -->
-      <!-- -------------- Card 2 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-3 grid place-items-center">
-        <img src="./Images/Render logomark - White.svg" alt="bwt predict" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center" id="render-logo">
-        <div class="px-5">
-          <h1 class="text-3xl font-semibold mb-2">Birth weight predict</h1>
-          <a href="https://birth-weight-prediction-0fta.onrender.com/" target="_blank"
-            class="flex items-center text-2xl dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 gap-x-2 transition ease duration-500">Visit
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-6 h-6 mt-2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-            </svg></a>
-        </div>
-      </div>
-
-      <!-- ===================================== -->
-      <!-- -------------- Card 3 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-3 grid place-items-center">
-        <img src="./Images/tilt_square_logo.png" alt="3D tilt square" loading="lazy"
-          class="aspect-square h-40 my-5 object-contain object-center">
-        <div class="px-5">
-          <h1 class="text-3xl font-semibold mb-2">Promptopia</h1>
-          <a href="https://promptopia-1.netlify.app/" target="_blank"
-            class="flex items-center text-2xl dark:text-slate-200 text-slate-600 hover:text-blue-600 dark:hover:text-blue-600 gap-x-2 transition ease duration-500">Visit
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-6 h-6 mt-2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-            </svg></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===================================== -->
-    <!-- ------- Visit Github Profile --------- -->
-    <!-- ===================================== -->
-    <div class="mt-10">
-      <a href="https://github.com/vishal48-tech" target="_blank"
-        class="text-2xl px-10 py-2 bg-blue-600 hover:bg-opacity-75 rounded-md text-white transition ease duration-500">Visit Github Profile</a>
-    </div>
-  </div>
-
-  <!-- ===================================== -->
-  <!-- -------------- Skills --------------- -->
-  <!-- ===================================== -->
-  <div id="skills"
-    class="flex flex-col items-center dark:text-white px-3 md:px-5 py-10 lg:px-20 gap-y-5 transition ease duration-500">
-    <div class="text-4xl md:text-5xl font-bold">
-      <h1 class="text-indigo-600 dark:text-indigo-500">Skills</h1>
-    </div>
-
-    <!-- ===================================== -->
-    <!-- --------------- Cards --------------- -->
-    <!-- ===================================== -->
-    <div class="flex flex-row flex-wrap justify-evenly w-full gap-10">
-      <!-- ===================================== -->
-      <!-- -------------- Card 1 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-5">
-        <img src="./Images/react.svg" alt="react.js" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
-        <div class="flex justify-center items-center text-3xl font-semibold">
-          <h1>React JS</h1>
-        </div>
-      </div>
-
-      <!-- ===================================== -->
-      <!-- -------------- Card 2 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-5">
-        <img src="./Images/nextjs-icon.svg" alt="next.js" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
-        <div class="flex justify-center items-center text-3xl font-semibold">
-          <h1>Next JS</h1>
-        </div>
-      </div>
-
-      <!-- ===================================== -->
-      <!-- -------------- Card 3 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-5">
-        <img src="./Images/tailwind-css.svg" alt="tailwind" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
-        <div class="flex justify-center items-center text-3xl font-semibold">
-          <h1>Tailwind CSS</h1>
-        </div>
-      </div>
-
-      <!-- ===================================== -->
-      <!-- -------------- Card 4 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-5">
-        <img src="./Images/nodejs-icon.svg" alt="node.js" loading="lazy"
-          class="aspect-square h-40 my-5 object-contain object-center rounded-sm">
-        <div class="flex justify-center items-center text-3xl font-semibold">
-          <h1>Node JS</h1>
-        </div>
-      </div>
-
-      <!-- ===================================== -->
-      <!-- -------------- Card 5 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-5">
-        <img src="./Images/php.svg" alt="php" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
-        <div class="flex justify-center items-center text-3xl font-semibold">
-          <h1>PHP</h1>
-        </div>
-      </div>
-
-      <!-- ===================================== -->
-      <!-- -------------- Card 6 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-5">
-        <img src="./Images/mysql.svg" alt="MySQL" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
-        <div class="flex justify-center items-center text-3xl font-semibold">
-          <h1>MySQL</h1>
-        </div>
-      </div>
-
-      <!-- ===================================== -->
-      <!-- -------------- Card 7 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-5">
-        <img src="./Images/jquery.svg" alt="jquery" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
-        <div class="flex justify-center items-center text-3xl font-semibold">
-          <h1>JQuery</h1>
-        </div>
-      </div>
-
-      <!-- ===================================== -->
-      <!-- -------------- Card 8 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-5">
-        <img src="./Images/html-5.svg" alt="html" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
-        <div class="flex justify-center items-center text-3xl font-semibold">
-          <h1>HTMl</h1>
-        </div>
-      </div>
-
-      <!-- ===================================== -->
-      <!-- -------------- Card 9 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-5">
-        <img src="./Images/css.svg" alt="css" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
-        <div class="flex justify-center items-center text-3xl font-semibold">
-          <h1>CSS</h1>
-        </div>
-      </div>
-
-      <!-- ===================================== -->
-      <!-- -------------- Card 10 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-5">
-        <img src="./Images/js.svg" alt="js" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
-        <div class="flex justify-center items-center text-3xl font-semibold">
-          <h1>JS</h1>
-        </div>
-      </div>
-
-      <!-- ===================================== -->
-      <!-- -------------- Card 11 --------------- -->
-      <!-- ===================================== -->
-      <div class="md:px-5">
-        <img src="./Images/python.svg" alt="python" loading="lazy"
-          class="aspect-square h-40 my-5 object-cover object-center rounded-sm">
-        <div class="flex justify-center items-center text-3xl font-semibold">
-          <h1>Python</h1>
+        <!-- Stats grid -->
+        <div class="fade-up grid grid-cols-2 gap-4">
+          <div class="card p-5 text-center">
+            <div class="text-3xl font-extrabold accent-text mb-1" style="font-family:'Syne',sans-serif;">3+</div>
+            <div class="about-text text-sm">Live Projects</div>
+          </div>
+          <div class="card p-5 text-center">
+            <div class="text-3xl font-extrabold accent-text mb-1" style="font-family:'Syne',sans-serif;">5+</div>
+            <div class="about-text text-sm">Technologies</div>
+          </div>
+          <div class="card p-5 text-center">
+            <div class="text-3xl font-extrabold accent-text mb-1" style="font-family:'Syne',sans-serif;">∞</div>
+            <div class="about-text text-sm">Curiosity</div>
+          </div>
+          <div class="card p-5 text-center">
+            <div class="text-3xl font-extrabold accent-text mb-1" style="font-family:'Syne',sans-serif;">100%</div>
+            <div class="about-text text-sm">Dedication</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ===================================== -->
-  <!-- ------------- Services -------------- -->
-  <!-- ===================================== -->
-  <div id="services" class="flex flex-col dark:text-white items-center py-10 px-3 md:px-5 lg:px-20">
-    <div class="text-4xl md:text-5xl font-bold">
-      <h1 class="text-indigo-600 dark:text-indigo-500">Services</h1>
+  <div class="gradient-line max-w-6xl mx-auto px-6"></div>
+
+
+  <!-- ══════════════ PROJECTS ══════════════ -->
+  <section id="projects" class="py-24 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="fade-up mb-4"><span class="section-label">// my work</span></div>
+      <h2 class="fade-up font-display text-4xl md:text-5xl font-extrabold mb-12" style="font-family:'Syne',sans-serif; letter-spacing:-0.02em;">
+        Featured <span class="accent-text">Projects</span>
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Project 1 -->
+        <div class="card fade-up p-6 flex flex-col gap-4">
+          <div class="gh-icon-wrap mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="color:var(--accent)">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg mb-1" style="font-family:'Syne',sans-serif;">Open CV</h3>
+            <p class="about-text text-sm leading-relaxed">Projects built with prompt engineering. Explore the repository to see it in action.</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">Open-CV</span>
+            <span class="tag">Prompt Engineering</span>
+          </div>
+          <a href="https://github.com/vishal48-tech/open-cv-prompt-engineering" target="_blank" rel="noopener" class="btn-primary mt-auto justify-center text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Visit Project
+          </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card fade-up p-6 flex flex-col gap-4">
+          <div class="gh-icon-wrap mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="color:var(--accent)">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg mb-1" style="font-family:'Syne',sans-serif;">CryptoVol AI</h3>
+            <p class="about-text text-sm leading-relaxed">An ML-powered web app that predicts volatility of crypto currency using historical data and a Python backend.</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">Python</span>
+            <span class="tag">ML</span>
+            <span class="tag">Fast-API</span>
+          </div>
+          <a href="https://crypto-volatility.onrender.com/" target="_blank" rel="noopener" class="btn-primary mt-auto justify-center text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Visit Project
+          </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="card fade-up p-6 flex flex-col gap-4">
+          <div class="gh-icon-wrap mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="color:var(--accent)">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg mb-1" style="font-family:'Syne',sans-serif;">Promptopia</h3>
+            <p class="about-text text-sm leading-relaxed">A full-stack app for discovering and sharing AI prompts. Built with modern React patterns and Tailwind.</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">React.js</span>
+            <span class="tag">Tailwind</span>
+          </div>
+          <a href="https://promptopia-1.netlify.app/" target="_blank" rel="noopener" class="btn-primary mt-auto justify-center text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Visit Project
+          </a>
+        </div>
+
+      </div>
+
+      <!-- GitHub CTA -->
+      <div class="fade-up text-center mt-10">
+        <a href="https://github.com/vishal48-tech" target="_blank" rel="noopener" class="btn-outline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          View All on GitHub
+        </a>
+      </div>
     </div>
+  </section>
 
-    <!-- ===================================== -->
-    <!-- --------------- Cards --------------- -->
-    <!-- ===================================== -->
-    <div class="grid lg:grid-cols-2 gap-x-10 gap-y-5 mt-5">
-      <!-- ===================================== -->
-      <!-- -------------- Card 1 --------------- -->
-      <!-- ===================================== -->
-      <div
-        class="py-10 px-3 md:px-5 lg:px-10 bg-slate-200 dark:bg-slate-800 rounded-lg text-center transition ease duration-500">
-        <h1 class="text-3xl font-semibold text-emerald-600 dark:text-emerald-300 transition ease duration-500">Website
-          development</h1>
-        <p class="text-2xl mt-3">I can create responsive websites to boost your online presence. Contact for more details and pricing.</p>
-      </div>
+  <div class="gradient-line max-w-6xl mx-auto px-6"></div>
 
 
-      <!-- ===================================== -->
-      <!-- -------------- Card 2 --------------- -->
-      <!-- ===================================== -->
-      <div
-        class="py-10 px-3 md:px-5 lg:px-10 bg-slate-200 dark:bg-slate-800 rounded-lg text-center transition ease duration-500">
-        <h1 class="text-3xl font-semibold text-emerald-600 dark:text-emerald-300 transition ease duration-500">Web-app
-          development</h1>
-        <p class="text-2xl mt-3">I can create functional web-apps for your business needs. Contact for more details and pricing.</p>
-      </div>
+  <!-- ══════════════ SKILLS ══════════════ -->
+  <section id="skills" class="py-24 relative overflow-hidden">
+    <div class="orb w-80 h-80" style="background:#a855f7; bottom:-60px; left:-60px;"></div>
 
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="fade-up mb-4"><span class="section-label">// tech stack</span></div>
+      <h2 class="fade-up font-display text-4xl md:text-5xl font-extrabold mb-12" style="font-family:'Syne',sans-serif; letter-spacing:-0.02em;">
+        My <span class="accent-text">Skills</span>
+      </h2>
 
-      <!-- ===================================== -->
-      <!-- -------------- Card 2 --------------- -->
-      <!-- ===================================== -->
-      <div
-        class="py-10 px-3 md:px-5 lg:px-10 bg-slate-200 dark:bg-slate-800 rounded-lg text-center transition ease duration-500">
-        <h1 class="text-3xl font-semibold text-emerald-600 dark:text-emerald-300 transition ease duration-500">Python scripts</h1>
-        <p class="text-2xl mt-3">I can help you create automation or other stuffs using python scripts. Contact for more details and pricing.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+
+        <div class="skill-chip fade-up">
+          <img src="https://vishal48-tech.github.io/portfolio/Images/react.svg" class="w-8 h-8 object-contain" alt="React" />
+          <span>React JS</span>
+        </div>
+        <div class="skill-chip fade-up">
+          <img src="https://vishal48-tech.github.io/portfolio/Images/nextjs-icon.svg" class="w-8 h-8 object-contain" alt="Next.js" />
+          <span>Next JS</span>
+        </div>
+        <div class="skill-chip fade-up">
+          <img src="https://vishal48-tech.github.io/portfolio/Images/tailwind-css.svg" class="w-8 h-8 object-contain" alt="Tailwind" />
+          <span>Tailwind CSS</span>
+        </div>
+        <div class="skill-chip fade-up">
+          <img src="https://vishal48-tech.github.io/portfolio/Images/nodejs-icon.svg" class="w-8 h-8 object-contain" alt="Node.js" />
+          <span>Node JS</span>
+        </div>
+        <div class="skill-chip fade-up">
+          <img src="https://vishal48-tech.github.io/portfolio/Images/php.svg" class="w-8 h-8 object-contain" alt="PHP" />
+          <span>PHP</span>
+        </div>
+        <div class="skill-chip fade-up">
+          <img src="https://vishal48-tech.github.io/portfolio/Images/mysql.svg" class="w-8 h-8 object-contain" alt="MySQL" />
+          <span>MySQL</span>
+        </div>
+        <div class="skill-chip fade-up">
+          <img src="https://vishal48-tech.github.io/portfolio/Images/jquery.svg" class="w-8 h-8 object-contain" alt="jQuery" />
+          <span>jQuery</span>
+        </div>
+        <div class="skill-chip fade-up">
+          <img src="https://vishal48-tech.github.io/portfolio/Images/html-5.svg" class="w-8 h-8 object-contain" alt="HTML" />
+          <span>HTML5</span>
+        </div>
+        <div class="skill-chip fade-up">
+          <img src="https://vishal48-tech.github.io/portfolio/Images/css.svg" class="w-8 h-8 object-contain" alt="CSS" />
+          <span>CSS3</span>
+        </div>
+        <div class="skill-chip fade-up">
+          <img src="https://vishal48-tech.github.io/portfolio/Images/js.svg" class="w-8 h-8 object-contain" alt="JavaScript" />
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-chip fade-up">
+          <img src="https://vishal48-tech.github.io/portfolio/Images/python.svg" class="w-8 h-8 object-contain" alt="Python" />
+          <span>Python</span>
+        </div>
+        <!-- New: Data Science -->
+        <div class="skill-chip fade-up" style="border-color:rgba(168,85,247,0.4); background:rgba(168,85,247,0.12);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent);flex-shrink:0;"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          <span>Data Science</span>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ===================================== -->
-  <!-- -------------- Contact -------------- -->
-  <!-- ===================================== -->
-  <div id="contact" class="flex flex-col dark:text-white items-center py-10 px-3 md:px-5 lg:px-20">
-    <div class="text-4xl md:text-5xl font-bold">
-      <h1 class="text-indigo-600 dark:text-indigo-500">Contact</h1>
-    </div>
-    <div class="grid lg:grid-cols-2 w-full place-items-center text-3xl pt-10 gap-5">
-      <div class="flex items-center gap-x-3">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mt-2">
-          <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
-          <path
-            d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
-        </svg>
-        <h1 class="text-2xl break-all sm:text-3xl">vishalmondal567@gmail.com</h1>
+  <div class="gradient-line max-w-6xl mx-auto px-6"></div>
+
+
+  <!-- ══════════════ SERVICES ══════════════ -->
+  <section id="services" class="py-24 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="fade-up mb-4"><span class="section-label">// what i offer</span></div>
+      <h2 class="fade-up font-display text-4xl md:text-5xl font-extrabold mb-12" style="font-family:'Syne',sans-serif; letter-spacing:-0.02em;">
+        My <span class="accent-text">Services</span>
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="service-card fade-up p-7">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(168,85,247,0.12);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent);flex-shrink:0;"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2" style="font-family:'Syne',sans-serif;">Predictive Modeling</h3>
+          <p class="about-text text-sm leading-relaxed mb-5">From raw data to production ready predictive model. Fast, accessible, and built to convert.</p>
+          <a href="#contact" class="text-sm font-semibold accent-text hover:underline" style="font-family:'Syne',sans-serif;">Get in touch →</a>
+        </div>
+
+        <div class="service-card fade-up p-7">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(168,85,247,0.12);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" style="color:var(--accent)"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2" style="font-family:'Syne',sans-serif;">Web-App Development</h3>
+          <p class="about-text text-sm leading-relaxed mb-5">Functional, scalable web apps tailored to your business needs. From dashboards to full-stack solutions.</p>
+          <a href="#contact" class="text-sm font-semibold accent-text hover:underline" style="font-family:'Syne',sans-serif;">Get in touch →</a>
+        </div>
+
+        <div class="service-card fade-up p-7">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(168,85,247,0.12);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" style="color:var(--accent)"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2" style="font-family:'Syne',sans-serif;">Task Automation</h3>
+          <p class="about-text text-sm leading-relaxed mb-5">Automation scripts, data pipelines, and custom Python tools that save you hours of manual work.</p>
+          <a href="#contact" class="text-sm font-semibold accent-text hover:underline" style="font-family:'Syne',sans-serif;">Get in touch →</a>
+        </div>
+
       </div>
-      <div class="flex items-center gap-x-3">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5"
-          stroke="currentColor" class="w-6 h-6 mt-1">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-        </svg>
-        <h1 class="text-2xl break-all sm:text-3xl">+91 6353372889</h1>
+    </div>
+  </section>
+
+  <div class="gradient-line max-w-6xl mx-auto px-6"></div>
+
+
+  <!-- ══════════════ CONTACT ══════════════ -->
+  <section id="contact" class="py-24 relative overflow-hidden">
+    <div class="orb w-96 h-96" style="background:#7c3aed; top:0; right:-100px;"></div>
+
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="fade-up mb-4"><span class="section-label">// get in touch</span></div>
+      <h2 class="fade-up font-display text-4xl md:text-5xl font-extrabold mb-4" style="font-family:'Syne',sans-serif; letter-spacing:-0.02em;">
+        Let's <span class="accent-text">Connect</span>
+      </h2>
+      <p class="fade-up about-text text-lg mb-12 max-w-md">
+        Have a project in mind or just want to say hello? My inbox is always open.
+      </p>
+
+      <div class="fade-up flex flex-col sm:flex-row gap-4 flex-wrap">
+        <a href="mailto:vishalmondal567@gmail.com" class="contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" style="color:var(--accent);flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <div>
+            <div class="text-xs section-label mb-0.5">Email</div>
+            <div class="font-medium text-sm">vishalmondal567@gmail.com</div>
+          </div>
+        </a>
+
+        <a href="tel:+916353372889" class="contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" style="color:var(--accent);flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <div>
+            <div class="text-xs section-label mb-0.5">Phone</div>
+            <div class="font-medium text-sm">+91 6353372889</div>
+          </div>
+        </a>
+
+        <a href="https://github.com/vishal48-tech" target="_blank" rel="noopener" class="contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color:var(--accent);flex-shrink:0;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <div>
+            <div class="text-xs section-label mb-0.5">GitHub</div>
+            <div class="font-medium text-sm">vishal48-tech</div>
+          </div>
+        </a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <script>
-    /* ------------------------- */
-    /* Open mobile menu function */
-    /* ------------------------- */
-    const openMenu = () => {
-      document.getElementById("menu").classList.toggle("-translate-x-full");
-      if (!document.getElementById("menu").classList.contains("duration-700")) {
-        document.getElementById("menu").classList.remove("duration-500");
-        document.getElementById("menu").classList.add("duration-700");
-      }
-    }
 
-    /* --------------------- */
-    /* Theme change function */
-    /* --------------------- */
-    const theme = () => {
-      document.documentElement.classList.toggle("dark");
-      document.getElementById("moon").classList.toggle("hidden");
-      document.getElementById("sun").classList.toggle("hidden");
-      document.getElementById("mobile-moon").classList.toggle("hidden");
-      document.getElementById("mobile-sun").classList.toggle("hidden");
-      if (document.getElementById("menu").classList.contains("duration-700")) {
-        document.getElementById("menu").classList.add("duration-500");
-        document.getElementById("menu").classList.remove("duration-700");
-      }
-      const logo = document.getElementById("render-logo");
-      logo.src = document.documentElement.classList.contains("dark")
-      ? "./Images/Render logomark - White.svg"
-      : "./Images/Render logomark - Black.svg";
-    }
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="py-8 text-center">
+    <div class="gradient-line max-w-6xl mx-auto px-6 mb-8"></div>
+    <p class="about-text text-sm" style="font-family:'DM Sans',sans-serif;">
+      Designed & Built with <span class="accent-text">♥</span> by <span class="font-semibold" style="font-family:'Syne',sans-serif;">Mondal Vishal</span> · 2026
+    </p>
+  </footer>
 
-    /* ---------------- */
-    /* Scroll functions */
-    /* ---------------- */
-    const scrollHome = () => {
-      window.scroll({
-        top: document.querySelector("#home").offsetTop - 50,
-        behavior: "smooth",
-      })
-    }
-    const scrollAbout = () => {
-      window.scroll({
-        top: document.querySelector("#about").offsetTop - 50,
-        behavior: "smooth",
-      })
-    }
-    const scrollProject = () => {
-      window.scroll({
-        top: document.querySelector("#projects").offsetTop - 50,
-        behavior: "smooth",
-      })
-    }
-    const scrollSkill = () => {
-      window.scroll({
-        top: document.querySelector("#skills").offsetTop - 50,
-        behavior: "smooth",
-      })
-    }
-    const scrollService = () => {
-      window.scroll({
-        top: document.querySelector("#services").offsetTop - 50,
-        behavior: "smooth",
-      })
-    }
-    const scrollContact = () => {
-      window.scroll({
-        top: document.querySelector("#contact").offsetTop - 50,
-        behavior: "smooth",
-      })
-    }
-  </script>
+
+  <!-- ══════════════ SCRIPTS ══════════════ -->
+  <script src="./script.js"></script>
+
 </body>
-
 </html>
