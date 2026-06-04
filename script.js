@@ -64,7 +64,7 @@ mobileMenu.classList.add('hidden');
 }
 
 // ── Typewriter ─────────────────────────────────────────
-const roles = ['Data Scientist', 'AI/ML Engineer', 'Python Developer'];
+const roles = ['AI Developer', 'Data Scientist', 'Generative AI Specialist', 'Python Developer'];
 let ri = 0, ci = 0, deleting = false;
 const tw = document.getElementById('typewriter');
 
