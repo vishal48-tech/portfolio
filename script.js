@@ -95,7 +95,7 @@ function closeMenu() {
 }
 
 // ── Typewriter ─────────────────────────────────────────
-const roles = ['AI Engineer', 'Data Scientist', 'Python Developer'];
+const roles = ['AI Engineer', 'Full-Stack Developer', 'Python Developer', 'Data Scientist'];
 let ri = 0, ci = 0, deleting = false;
 const tw = document.getElementById('typewriter');
 
