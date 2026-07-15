@@ -183,3 +183,67 @@ gsap.utils.toArray('.fade-up').forEach(el => {
     }
   });
 });
+
+// Journey Section Timeline — line is always fully visible (no animation)
+
+const milestoneItems = gsap.utils.toArray('.milestone-item');
+milestoneItems.forEach((item, index) => {
+  const indicator = item.querySelector('.milestone-indicator');
+  const card = item.querySelector('.milestone-card');
+  const date = item.querySelector('.text-date');
+  
+  if (indicator) {
+    gsap.fromTo(indicator,
+      { scale: 0, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.6,
+        ease: 'back.out(1.5)',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 85%'
+        }
+      }
+    );
+  }
+  
+  if (card) {
+    const isLeftCard = item.classList.contains('md:flex-row-reverse');
+    const startX = isLeftCard ? -60 : 60;
+    
+    gsap.fromTo(card,
+      { x: startX, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 82%'
+        }
+      }
+    );
+  }
+
+  if (date) {
+    const isLeftDate = !item.classList.contains('md:flex-row-reverse');
+    const startX = isLeftDate ? -40 : 40;
+
+    gsap.fromTo(date,
+      { x: startX, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 82%'
+        }
+      }
+    );
+  }
+});
+

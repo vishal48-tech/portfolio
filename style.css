@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: 240 6% 96%;
+  --background: 240 6% 90%;
   --foreground: 240 10% 3.9%;
   --card: 0 0% 100%;
   --card-foreground: 240 10% 3.9%;
@@ -85,10 +85,10 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: hsl(var(--primary) / 0.3);
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--primary) / 0.3);
+  background: hsl(var(--primary) / 0.6);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
